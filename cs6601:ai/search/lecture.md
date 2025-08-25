@@ -1,5 +1,17 @@
 # Search
 
+## Readings
+Required:
+- AIMA: Chapters 1-3
+- https://www.cs.princeton.edu/courses/archive/fall06/cos402/papers/korfrubik.pdf
+- https://faculty.cc.gatech.edu/~thad/6601-gradAI-fall2015/chapter03-clean.pdf
+- https://faculty.cc.gatech.edu/~thad/6601-gradAI-fall2015/chapter04a.pdf
+
+Optional:
+- https://static.us.edusercontent.com/files/595MV3WJFZoEG13PO4R4rzAY
+- https://static.us.edusercontent.com/files/LezaYpbxayZc1tWXDSvvFyI9
+- https://static.us.edusercontent.com/files/CpLNNvd7dD48Z8fHhshceXAb
+
 ## Challenge 1
 ![img.png](img/img_1.png)
 
@@ -51,13 +63,48 @@ Readings: https://www.cs.princeton.edu/courses/archive/fall06/cos402/papers/korf
 - If there's a barrier, it will move around it, but it might not be the optimal path
 - Solved by A* search
 
-## 
+## A* Search
+- f(n) = g(n) + h(n)
+- g(path) = path cost
+- h(path) = h(s) = estimated distance to goal
+- Will A* always find the shortest path?
+  - No, it depends on the heuristic function h(n)
+- A* finds lowest cost path if:
+  - h(n) < true cost to goal (admissible)
+  - h never overestimates the cost to reach the goal
+  - h optimistic
+  - h admissable
 
-## 
+## State space
+What is the number of possible states?
+- Cell B and B
+- Power - on/off/sleep
+- Camera - on/off
+- Brush Height - 1/2/3/4/5
+- Positions - 10
+Answer: 3 * 2 * 5 * (2^10) dir position * 10 robot position = 307200
 
-## 
+## Sliding blocks puzzle (15 puzzle)
+- h1 = number of misplaced blocks
+- h2 = sums(distances of blocks from their goal positions)
+- **Which of this is admissible?**
+Answer: Both, because every tile is the wrong position can be moved closer the correct position no faster than one space per move. h2 is always greater and equal to h1.
+h2 will expand fewer nodes than h1, because it is more informed.
 
-## 
+
+A block can move A->B if (A adjacent to B) and (B is empty). Generating a relaxed problem:
+- h1 = A block can move A->B
+- h2 = A block can move A->B if (A adjacent to B)
+- h = max(h1,h2)
+  - Guaranteed to be admissible, if h1 and h2 are admissible
+  - Combining multiple heuristics has more cost
+
+## Problem solving technology only works when:
+- Fully observable - we must be able to see what the initial state we start out with
+- Known - We have to know the sets of available actions, the results of those actions, and the cost of those actions
+- Discrete - Finite number of actions to choose from
+- Deterministic - we have to know the results of our actions
+- Static - there must be nothing else in the world that can change the world, except four our actions
 
 ## 
 
