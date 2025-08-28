@@ -139,14 +139,4 @@
 - If A* finds a solution at depth 5 using 52 nodes, then the effective branching
   factor is 1.92.
 
-##
-
-
-##
-##
-##
-##
-##
-##
-##
 
