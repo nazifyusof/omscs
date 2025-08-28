@@ -96,28 +96,57 @@
 
 
 ### Depth-limit Search
+- Keep DFS from wandering down an infinite path
+- The time complexity is O(b^ℓ) and the space complexity is O(b*ℓ)
+- 
 
 ### Bidirectional Search
+- Simultaneously searches forward from the initial state and backwards from the goal state
+- Hoping the two searches will meet
 
-
-
-## Comparing uninformed search algo
+### Comparing uninformed search algo
 ![img.png](aima/img.png)
 
-## 3.5 Informed (heuristic) Search Strategies
+## Informed (heuristic) Search Strategies
+- Usees heuristic functions, h(n) to hint about the location of goals
 
-## 
+### Greedy BFS
+- A form of best-first search that expands first the node with the lowest h(n) value
+
+### A* Search
+- f(n)=g(n)+h(n), g(n) is the path cost from the initial state to node n, h(n) is the estimated cost of shortest path
+- Complete. Cost optimal based on heuristic function
+- An admissible heuristic is one that never overestimates the cost to reach a goal.
+  - WIth an admissible heuristic, A* is cost optimal
+- Every consistent heuristic is admissible (but not vice versa), so with a consistent heuristic,A ∗is cost-optimal.
+- With an inadmissible heuristic, A∗may or may not be cost-optimal.
+  - First, if there is even one cost-optimal path on which h(n) is admissible for all
+    nodes n on the path, then that path will be found, no matter what the heuristic says for states
+    off the path.
+- Bidirectional A* search is sometimes more efficient than A ∗itself.
+
+### Satisficing Search: inadmissible heuristics and weighted A*
+- Satisficing: explore fewer nodes (taking less time and space) if we are willing to accept solutions that are suboptimal, but are “good enough”
+- If we allow A ∗ search to use an inadmissible heuristic—one that may overestimate—then we risk missing the optimal
+  solution, but the heuristic can potentially be more accurate, thereby reducing the number of nodes expanded
+- Weighted A* search, where we weight the heuristic value more heavily, giving us the evaluation function f (n)=g(n)+W ×h(n), for some W > 1
+
+## Heuristic Function
+
+### Characterizing Heuristic Functions
+- Measure quality of heuristic function: **Effective branching Factor** b*
+- N +1=1 +b∗+(b∗)^2 +···+(b∗)^d
+- If A* finds a solution at depth 5 using 52 nodes, then the effective branching
+  factor is 1.92.
 
 ##
 
-## 
 
 ##
-
-## 
-
+##
+##
+##
+##
+##
 ##
 
-## 
-
-##
