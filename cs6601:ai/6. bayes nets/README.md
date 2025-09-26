@@ -186,6 +186,72 @@ week 6:
 
 ![img.png](img/img_9.png)
 
+## Probabilistic Inference
+- How to answer probabilistic queries from a bayes network
+- ![img.png](img/img_10.png)
+- Question: Mary has called to report the alarm is going off and we want to know whether or not is burglary, what are the nodes?
+- ![img.png](img/img_11.png)
+
+## Enumeration
+- P(+b|+j,+m) = P(+b,+j,+m) / P(+j,+m), from conditional probability to unconditional probability
+- P(+b|+j,+m) = (Sum over e and a of P(+b,+j,+m,e,a) / P(+j,+m)) / P(+j,+m)
+- P(+b|+j,+m) = (Sum over e and a P(+b) P(e) P(a|+b,e) P(+j|a) P(+m|a)) / P(+j,+m)
+- P(+b|+j,+m) = f(+e,+a) + f(+e,-a) + f(-e,+a) + f(-e,-a) / P(+j,+m)
+
+![img.png](img/img_12.png)
+
+##  Speeding up Enumeration
+- Pull out terms from the enumeration
+- P(+b|+j,+m) = (Sum over e and a P(+b) P(e) P(a|+b,e) P(+j|a) P(+m|a)) / P(+j,+m)
+- Probability of b going to be the same for all values of e and a, so we can pull it out to the front
+- Probability of be going to be the same for all values of a, so we can pull it out between sum of e and a
+- P(+b|+j,+m) = P(+b) (Sum over e P(e) sum over a  P P(a|+b,e) P(+j|a) P(+m|a)) / P(+j,+m)
+
+![img.png](img/img_13.png)
+- M and J is dependent on each other
+- A is dependent on M and J
+- B is dependent on A
+- B is depended on A and B, B due to if alarm goes off and there's no burglary, then it's probably a false alarm
+
+
+- Bayes network tend to be the most compact and thus be easier to do inference on when they're written in the causal direction i.e. when network flows from causes to effects
+
+##  Variable Elimination
+![img.png](img/img_14.png)
+- In P(R,T), we do P(T|R) P(R)
+
+![img_1.png](img/img_15.png)
+
+![img.png](img/img_16.png)
+
+![img.png](img/img_17.png)
+
+- Variable Elimination is a continued process of joining together factors to form a larger factor  and eliminating factors by summing out variables
+- Variable Elimination can be much more efficient than enumeration
+##  
+
+## 
+
+##  
+
+## 
+
+##  
+
+## 
+
+##  
+
+## 
+
+##  
+
+## 
+
+##  
+
+## 
+
 ##  
 
 ## 
