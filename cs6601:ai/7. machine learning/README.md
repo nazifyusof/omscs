@@ -153,31 +153,165 @@ $$
 - if there are situations where classes interpenetrate but still have distinct boundaries, KNN or the Kernel methods would work well
 - Sometimes data is high dimensional that it's hard to visualize
 - For those methods, we could use decision trees and boosting methods
+
+## Decision Trees
+![img.png](img/img_16.png)
+- If we have continuous value instead of discrete values, we create threshold for the attribute
+
+## Entropy and Infomation Gain
+
+$$
+\text{Remainder}(A) = \sum_k \frac{P_k + N_k}{P + N} \cdot B\left( \frac{P_k}{P_k + N_k} \right)
+$$
+
+$$
+B(q) = -q \log_2 q - (1 - q) \log_2 (1 - q)
+$$
+
+$$
+\text{Information Gain}(A) = B\left( \frac{P}{P + N} \right) - \text{Remainder}(A)
+$$
+
+## ENTROPY QUIZ:
+![img.png](img/img_17.png)
+![img.png](img/img_18.png)
+- Why?
+$$
+\text{Gain}(\text{outlook}) = 0.940 - \left( \frac{5}{14} B\left(\frac{2}{5}\right) + \frac{4}{14} B\left(\frac{4}{4}\right) + \frac{5}{14} B\left(\frac{3}{5}\right) \right) = 0.246
+$$
+
+- 0.940 = Total entropyy
+- 5/14 = Probability of sunny
+- 4/14 = Probability of overcast
+- 5/14 = Probability of rainy
+- B(2/5) = Entropy of sunny = 2 results in yes
+- B(4/4) = Entropy of overcast = 4 results in yes
+- B(3/5) = Entropy of rainy = 3 results in yes
+
+
+## Random Forest 
+- Bagging (Bootstrap Aggregating)
+- Input: Data set of Size N with M Dimensions
+  - SAMPLE n times from Data
+  - SAMPLE m times from attributes
+  - Learn TREE on sample DATA and ATTRIBUTES
+- Repeat until k trees
+- The random sampling seems to help avoid overfitting, which is often a problem in decision trees
+- One nice thing about DT is that they tell you which features are teh most useful automatically
+- One issue is trees might get too big, we can limit decision tree leaves, easy to examine
+- Lots of trees and forest, we can see how stable the feature importance is
+- 
 - 
 
+## Boosting
+- Combine many weak classifiers to form an ensemble that can do the classifier task
+- alpha = 0.5 * ln((1 - error) / error) > 0
+- if the example is classified wrong, we multiply its weight by e^(alpha)
+- If the example is classified right, we multiply its weight by - e^(alpha)
+![img.png](img/img_19.png)
+- Example above where we look at the top right -ve, 
+  - first classifier is wrong, hence -0.42
+  - second classifier is wrong, hence -0.65
+  - third classifier is right, hence +0.92
+  - Total is -0.15, hence classified as -ve
+- The ensemble is correct! 
+- We just keep monitoring the error during boosting and stop when it converges
+- Like decision trees, boosting also gives feature importance
 
-##
-
-
-
-##
-
-
-##
-
-
-
-##
-
-
-##
-
-
-
-##
-
-
-##
-
+## Neural Nets
+![img.png](img/img_20.png)
+- Model neurons using inputs, biased weights, a non-linear function that represents the neurons body, and outputs
+- Non-linear function could be;
+  - Simple step function
+  - Probit, which is basically the Gaussian integrated
+- Depends on problem, which is better. Most people prefer smooth functions like probit
 
 
+Can create logic gates with neural nets
+- AND: W0 = -1.5, W1 = 1, W2 = 1
+- OR: W0 = -0.5, W1 = 1, W2 = 1
+- NOT: W0 = 0.5, W1 = -1
+- NOR: W0 = 0.5, W1 = -1, W2 = -1
+
+
+## Multiplayer Nets
+- Feedforward nets: it has no internal states, implement functions based on their inputs
+- 
+
+## Perceptron Learning
+![img.png](img/img_21.png)
+- A single layer perceptron can only do linear decision boundaries,
+- In linear boundary we can learn functions like AND and OR, but not XOR, because XOR is not linearly separable.
+- For DT, it would need to make a full tree with n levels in order to do a good job, need to see 2^n unique examples to get it
+- DT does much better with a lot less examples
+
+
+## Multilayer Perceptrons
+- Can learn nonlinear decision boundaries — e.g., can solve XOR. 
+- Extension of single-layer perceptron with one or more hidden layers.
+
+
+## Back Propagation
+- How do we train Multilayer Perceptrons? Back propagation
+- ![img.png](img/img_22.png)
+- Output Layer
+  - Err i ​: difference between target and actual output
+  - g ′(in_i ​): derivative of activation function at neuron 𝑖
+- Hidden Layer
+  - Error is back-propagated from output layer to hidden layer
+  - Weighted sum of downstream deltas scaled by local derivative.
+  - This connects the output layer’s errors back to hidden layer neurons.
+- Weight Update for Hidden Layer
+  - a_k: activation from previous layer (input to hidden)
+  - delta_j: propagated error for hidden node
+- Notes:
+  - alpha: learning rate
+  - g'(in): derivative of activation 
+  - Back propagation applies chain rule to distribute output error backward through layers
+  - Each layer adjusts weights to minimize total network error
+  - In neural nets, the process of updating the weights and then summing teh gradient updates for the training examples are called **EPOCH**
+  - ML researchers can tell how hard a problem is by how long it takes to converge
+![img.png](img/img_23.png)
+![img_1.png](img/img_24.png)
+  - DT converges faster, but multilayer network eventually gets there
+
+## Deep Learning
+- Use hiererical structures to solve problems
+- In DT, human can understand how a decision is made by traversing the tree
+- With NN, it gets more complex on determining what the system is doing
+- It might be hard to use the system to understand of the problem domain, BUT many problems only care more about the performance
+
+
+## Unsupervised Learning
+- Algorithm is given a set of data without labels, and it attempts to determine what classes are in the data, and which data belongs to which class
+- Useful when we have lots of data that's hard to label
+- K-means below:
+
+## k-Means and EM
+- With K means, we specify the number of classes in a dataset
+
+| 1                             | 2                          | 3                          | 4                   | 
+|:------------------------------|:---------------------------|:---------------------------|---------------------|
+| ![img_25.png](img/img_25.png) | ![img.png](img/img_26.png) | ![img.png](img/img_27.png) | ![img.png](img/img_28.png) |
+
+- Start by putting 2 means randomly in the data
+- EXPECTATION: Take every point in db and assign it to the nearest mean
+- MAXIMIZATION: We recalculate the mean based on the assignment of the points to each of the clusters
+- Repeat expectation step, re-estimate the mean again, use the new mean to create new decision boundary to reclassify the data
+- Repeat until the means and the assignments of the points to the clusters dont change
+![img.png](img/img_29.png)
+- What if we get stuck and doesnt converge? 
+  - We can try random restart like we did with hill climbing in Simulated Annealing
+
+## EM and Mixture of Gaussian
+- We can fit mixture of Gaussians to the data
+- We can use the same EM approach to find each Gaussian's Variance and Mean
+- Before we do EM, we need to know how many Gaussians to use
+
+| L = 0                         | 1                          | 2                          | 5                          | 20 |
+|:------------------------------|:---------------------------|:---------------------------|----------------------------|----|
+| ![img.png](img/img_30.png) | ![img.png](img/img_26.png) | ![img.png](img/img_32.png) | ![img.png](img/img_33.png) | ![img.png](img_34.png)   |
+
+- Because we had more params to estimate, it took 20 EM for Gaussian, and 4 for K-Means
+- Increasing the dimensions to estimate always requires more time and data to complete
+- 
