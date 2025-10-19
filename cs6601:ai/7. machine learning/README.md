@@ -310,7 +310,7 @@ Can create logic gates with neural nets
 
 | L = 0                         | 1                          | 2                          | 5                          | 20 |
 |:------------------------------|:---------------------------|:---------------------------|----------------------------|----|
-| ![img.png](img/img_30.png) | ![img.png](img/img_26.png) | ![img.png](img/img_32.png) | ![img.png](img/img_33.png) | ![img.png](img_34.png)   |
+| ![img.png](img/img_30.png) | ![img.png](img/img_26.png) | ![img.png](img/img_32.png) | ![img.png](img/img_33.png) | ![img.png](img/img_34.png)   |
 
 - Because we had more params to estimate, it took 20 EM for Gaussian, and 4 for K-Means
 - Increasing the dimensions to estimate always requires more time and data to complete
