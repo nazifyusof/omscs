@@ -13,6 +13,9 @@ week 6:
 - P(B|A) = 1 parameter
 - P(B|!A) = 1 parameter
 - Total = 3 parameters
+- 
+## Markov Blanket
+- The Markov blanket of a node is the set of nodes consisting of its parents, its children, and any other parents of its children.
 
 ## Computing Bayes Rule
 - $P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}$
