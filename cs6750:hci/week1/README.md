@@ -2,17 +2,25 @@
 - Watch lessons 1.1 through 1.3 (1)
 
 # Assignments
-- Complete CITI Training (7)
-- Complete the syllabus comprehension quiz (<0.5)
+- ~~Complete CITI Training (7)~~
+- ~~Complete the syllabus comprehension quiz (<0.5)~~
+
+# Readings
+Lesson 1.1 (Introduction to Human-Computer Interaction)
+- ~~MacKenzie, I.S. (2013). Chapter 1: Historical Context. Human-Computer Interaction: An Empirical Research Perspective. (pp. 1-26). Waltham, MA: Elsevier.~~
+- Norman, D. (2013). Chapter 1: The Psychopathology of Everyday Things. In The Design of Everyday Things: Revised and Expanded Edition. (pp. 1-36). Arizona: Basic Books.
+
+Lesson 1.2 (Introduction to CS6750)
+- Joyner, D. (2019). The CHI of Teaching Online: Blurring the Lines Between User Interfaces and Learner Interfaces. In E. Kapros & M. Koutsombogera (Eds.) Designing for the User Experience in Learning Systems, Human-Computer Interaction Series. Springer.
+
 
 # Miscellany
 - ~~Complete the start-of-course survey (<0.5)~~
 - ~~Complete the syllabus comprehension quiz (<0.5)~~
-- Read through the course syllabus and linked pages (1)
+- ~~Read through the course syllabus and linked pages (1)~~
 - ~~Introduce yourself on the forum and greet your classmates (<0.5)~~
 - ~~Complete the secret survey to show you read this page by clicking here (<0.5)~~
-- Work on additional participation credit opportunities (1)
-
+- ~~Work on additional participation credit opportunities (1)~~
 
 # Notes
 
