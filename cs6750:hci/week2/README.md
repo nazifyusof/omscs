@@ -165,7 +165,6 @@ Morgan loves audiobooks, takes notes and bookmarks and stuff
 Example: Thermostat
 - Feeling the heat is good, hearing the heater turn on might not
 - Mark the thermostat the heat is on to lower the gulf of evaluation
-- 
 
 
 5 tips of GofEv
