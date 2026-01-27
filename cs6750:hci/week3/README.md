@@ -54,8 +54,7 @@ Work on additional participation credit opportunities (1.5)
     - In game, we should directly control our avatar
     - Diret manipulation is a powerful tool to shorten the distance
 
-![img.png](img.png)
-
+![img.png](./image/img.png)
 
 ## Exploring HCI: Direct Manipulation and VR
 - Able to view what they deign in 3d
@@ -144,7 +143,7 @@ Work on additional participation credit opportunities (1.5)
 - Can't filter out touch feedback, but unlike listening, it is only available to the person touching
 
 ## Memory
-![img_1.png](img_1.png)
+![img_1.png](./image/img_1.png)
 
 ## Memory: perceptual store
 - Working memory, very short term, few seconds
@@ -160,7 +159,7 @@ Work on additional participation credit opportunities (1.5)
 - More recent research, only four to five chunks at a time
 - 2 principles
   - Chunking - grouping together several items into a single meaningful item e.g.
-    - ![img_2.png](img_2.png)
+    - ![img_2.png](./image/img_2.png)
     - Right most the easiest to remember, we dont remember letters, we remember words
     - Middle next, then left most the hardest
     - Recognizing is easier than recall!
@@ -176,7 +175,7 @@ Work on additional participation credit opportunities (1.5)
 - E.x. remembering flash cards, formulas, vocab
 
 ## Cognition
-![img_3.png](img_3.png)
+![img_3.png](./image/img_3.png)
 
 ## Cognition: Learning
 - Procedural learning: how to do something
@@ -232,8 +231,8 @@ Work on additional participation credit opportunities (1.5)
   - Larry Constantine's and Lucy Lockwood's 6 principles
   - Ronald Mace's 7 principles of universal design
 - In our case, we learn about 15
-![img_4.png](img_4.png)
-![img_5.png](img_5.png)
+![img_4.png](./image/img_4.png)
+![img_5.png](./image/img_5.png)
 
 ## Discoverability
 - Norman: Is it possible to even figure out what actions are possible and how to perform them
@@ -245,7 +244,7 @@ Work on additional participation credit opportunities (1.5)
 - Walk on the line between discoverability and simplicity
 
 ## Simplicity 
-![img_6.png](img_6.png)
+![img_6.png](./image/img_6.png)
 - More discoverable, more complex
 - Nielsen: Dialogues should not contain information which is irrelevant or rarely needed. Every extra unit of information in a dialogue competes with the relevant units of information and diminishes their relative visibility.
 - Constantine: The design should make simple, common tasks easy to perform
@@ -265,7 +264,7 @@ Work on additional participation credit opportunities (1.5)
 - Signifiers: in context instruction like arrow where to swipe, create affordance, match perceived affordance to actual affordance
 
 ## Mapping
-![img_7.png](img_7.png) 
+![img_7.png](./image/img_7.png) 
 - Norman: mapping is a technical term, meaning the relationship between the elements of two sets of things
 - Nielsen: The system should speak the user's language, with words, phrases and concepts familiar to the user, rather than system-oriented terms. Follow real-world conventions, making information appear in a natural and logical order.
 - Mapping vs Affordances
@@ -318,7 +317,7 @@ Work on additional participation credit opportunities (1.5)
 - Mace: Appropriate size and space is provided for approach, reach, manipulation, and use regardless of user's body size, posture, or mobility.
 
 ## Structure
-![img_8.png](img_8.png)
+![img_8.png](./image/img_8.png)
 - Overall architecture of the interface
 - Constantine: Design should organize the user interface purposefully, in meaningful and useful ways based on clear, consistent models that are apparent and recognizable to users.
 
