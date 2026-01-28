@@ -431,44 +431,135 @@ Work on additional participation credit opportunities (1.5)
   - Avoid this by studying casks and context by having users think out loud durin activity or interview during activity
 
 ## Naturalistic Observation
-- 
+- Observing people in their natural context
+- Confirmation Bias
+  - See what we want to see
 
+## 5 tips: Naturalistic Observation
+- Take notes
+  - Dont just sit around and watch
+- Start specific, then abstract
+  - If you jump to conclusions too early, we risk tunnel vision
+- Spread out your session
+  - Instead of one long session, do multiple short sessions
+- Find the partner
+  - take your own notes, and compare them later
+- Look for questions
+  - naturalist observation should inform  the questions you decide to ask participants in more targeted needfinding exercise
+  - Questions to investigate further
 
 ## Participant Observation
+- Experience task ourselves
+- "You are not your user"
 
 ## Hacks and Workarounds
+- How do they user the interface in unintended ways to accomplish their goals
+- How do they break out of interface to accomplish their goals tha could have been accomplished with an interface
+- Design desk
+  - Look at user's desk
+- Not just look at what user does and assume you understand why
+- look at their workarounds and why they are using them
 
 ## Errors
+- Slips or mistakes user make within an interface
+- Slips: Nothing wrong with mental model how it works, forget which window is active
+- Watch people do their task, ask them why they did what they did
 
 ## Apprenticeship and Ethnography
+- Recommends research a community by become participant in that community
 
 ## Interviews and Focus Groups
+- Talk to people directly
+- Get at where user is thinking when they are engaging at a task
+- Focus groups: number of people to talk about some topic, overly convergent thinking instead of new ideas
+- Used FG in conjunction with iv
 
 ## 5 tips: Interviews
+- Focus on six W's
+- Be aware of bias
+  - How we phrase questions, not limit to some views
+- Listen
+  - Participant do most of the talking
+  - Dont reveal that might make them agree with you
+- organize the interview
+  - intro, lighter questions, summary at the end
+- Practice
+  - Friends, families, and research partners
 
 ## Exercise: interviews
+- No yes/no questions
+- Dichotomy questions not good (do you exercise for health or pleasure), dont limit it
+- Don't introduce social desirability bias (we're developing a fitness app, do you think exercise is important?)
+  - Would you be interested in using a fitness app? -> better one, more collaborative
 
 ## Think-Aloud
+- Talk about their perception while doing the task, same like interview , but do so in context of the task
+- Help user at users thoughts when they are no longer doing the task
+- Post-eevent protocol
+  - Immediately after task
 
 ## Surveys
+- Get a much larger response more quickly
+- Not as thorough as interview, but important to get large amount of data
 
 ## 5 tips: Surveys
+- Less is more
+  - Ask way too much questions is a mistake
+  - Only ask questions that are essential to your research goals
+- Be aware of bias
+- Tie them to the inventory
+  - Make sure survey questions tie back to the data inventory you created earlier
+- Test it out
+  - have coworkes to test the survey
+- Iterate
+  - Test out survey, analyze results, then refine the survey
 
 ## Writing Good Survey Questions
+- Be Clear - provide labels to clarify a numeric scale, avoid overlapping ranges, time-box frequency questions
+- Be Concise - ask question in plain language
+- Be Specific - avoid question on super-big ideas, ask series of smaller questions, avoid double-barreled questions
+- Be Expressive - emphasize the user's opinion, 
+- Be Unbiased - allow users to add nominal categories, use ranges instead of yes and no, give levels of frequency or agreement, leave potentially open-ended questions
+- Be Usable - provide a progress bar to know how much is left, make your page lengths consistent, order your questions logically, alert users about unanswered questions, preview the survey yoursel
 
 ## Other Data Gather Methods
+- Existing UI valuation
+- Product reviews
+- Data logs  of user interactions
 
 ## Exercise: Needfinding Pros and Cons
-
-## Design Challeng: Needfinding for Book Reading
+![img.png](./image/img_9.png)
 
 ## Iterative Needfinding
+![img.png](./image/img_10.png)
+- Needfinding is not one-and-done
+- We need to revisit it throughout the design process, like design life-cycle
 
 ## Revisiting the Inventory
+- Pay special attention where the data seems to conflict
+- Revisit the inventory
+  - Who are the users
+  - Where are the users
+  - What is the context of the task
+  - What are their goals
+  - What do they need
+  - What are their task? What are they doing cognitively and socially?
+  - What are their subtask?
 
 ## Representing the Need
+- Further outline into hierarchical task analysis, or diagrams of how tasks relate to each other
+- Flowchart wth decision making points
 
 ## Defining the Requirements
+- Should be specific and evaluable
+- include some components that are outside of user's task as well as defined by project requiremetns
+- Functionality
+- Usablity
+- Learnability
+- Accessibility
+- Compatibility
+- Compliance
+- Cost
 
 ## Exploring HCI: Needfinding
 
@@ -505,4 +596,3 @@ Work on additional participation credit opportunities (1.5)
 ## Exploring Ideas
 
 ## Exploring HCI: Design Alternatives
-
