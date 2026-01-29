@@ -561,38 +561,121 @@ Work on additional participation credit opportunities (1.5)
 - Compliance
 - Cost
 
-## Exploring HCI: Needfinding
-
 # 3.4: Design Alternative
+- How to accomplish the goal that we've investigated
+- Design is very hard card design choices and controls
+- How to generate ideas and how can we pursue that
 
 ## The Second Biggest Mistake
+- Biggest mistake is jumping straight to jumping to solution wihout thinking about the suer
+- Second biggest mistake is to settle on the first idea that comes to mind. There are multiple forms
+  - Too allegiant to existing product - no nest if we just copy existing thermostat
+  - Focussing too strongly of one alternative
+  - By flushing out ideas for interfaces you don't end using isn't a waste of time, by doing so we continue to learn more about the problem
 
 ## The Design Space
+- Area in which we design our interface
+- Not too limiting on wall, or keychain
 
 ## Individual Brainstorming
+- Generate alot of ideas, short or long doesnt matter
+- Research says that it's better to always start with individual brainstorming
+- Generate alot of ideas, we never know which one will be the best
 
 ## 5 Tips: Individual Brainstorming
+- Write down the core problem
+  - Keep it visible, remain grounded in the problem, help us remain focus and creative
+- Constraint ourselves
+  - One idea with different categories
+- Aim for 20
+  - Dont stop until you have 20 ideas
+- Take a break
+- Divide and conquer
+  - Split the problem into subproblems, brainstorm each subproblem separately
 
 ## Challenges in Group Brainstorming
+- Thompson (2008)
+- Social loafing: the tendency to exert less effort working in groups than working alone
+- Conformity: tendency to agree with or follow the group;s reasoning and ideas
+- Production blocking: the tendency of some individuals in discussion to block other individuals participation
+- Performance matching: the tendency to match one's level of performance to other collaborators
+- Power dynamics: the tendency to defer to more senior individuals, or to overpower less senior individuals
+
+
+- possibly only do after individual brainstorming
 
 ## Rules for Group Brainstorming
+- Osbourne(1957)
+- Expressiveness: share out loud no matter how strange
+- Non-evaluation: no criticism of ideas
+- Quantity: aim for as many ideas as possible
+- Building: build on others' ideas
+
+- Oxley, Dzindolet (1996)
+- Stay focused: keep the goal in mind at all time
+- No explaining ideas
+- Revisit the problem often
+- Encourage everyone to participate
 
 ## 5 Tips: Group Brainstorming
+- Go through every individual idea, 
+  - Go to each one, avoid converging to one idea too early
+- Find the optimal size
+  - Not more than 5 people
+- Set clear rules for communication
+  - Set timer, one person talk at a time
+- Set clear expectation
+  - Set session length, goal of session
+- End with ideas, not decision
+  - Let them perculate after session, and decide later
 
 ## Fleshing Out Ideas
+- try to flush these 3-4 ideas out for prototyping stage
+- some ideas can be missed, that okay
+- you can't generate good ideas without generating alot of ideas
 
 ##  Personas
+- We create personas to represent our user base
+- Fictional characters that represent different user types
+- Help us focus on user needs when we design
 
 ## User Profiles
+- Formulaicly generate a large number of user profiles
+- Different variables about our users and the possibilities within each
+  - Exercise expertise? Novice? Expert?
+  - Reading level? casual? serious?
+  - Motivation low? high?
+  - Tech literacy low? high?
+  - Usage frequency? low? high?
+- Use above to inform about our design decisions
 
 ## Timelines
+- Take the persona and stretch them over time
+- "Journey maps" 
+![img.png](./image/img_11.png)
+- Can see how user interacts with the system over time
+- Mood, pain points, touchpoints
+- What they're thinking, feeling, so we can integrate our design into their life better
 
 ## Scenarios and Storyboards
+- Rather than outlining the whole thing, scenarios are short stories about how our persona would interact with our system
+- Storyboards are visual representations of those scenarios
+- Timeline: tend to be general, how routine interaction
+- Scenarios: specific interaction, particular person interacting in a particular way whwen particular event occurs
+- E.g. Morgan listen to audiobook, then ambulance comes
+  - Gesture vs tap vs voice command to pause
+- Storyboard: could be a video mock up
 
 ##  User Modelling
+![img.png](./image/img_12.png)
+- Personas are more personal
+- User model are more objective, give measureable and comparable view of the user
+- 
 
 ## Exercise: Design Alternatives Pros and Cons
+![img_1.png](./image/img_13.png)
 
 ## Exploring Ideas
+- Some case scenario by dr joyner
 
 ## Exploring HCI: Design Alternatives
