@@ -263,31 +263,110 @@ Lesson 3.6 (Evaluation)
 - 
 
 # 3.5: Prototyping
+- We want to actually build things that we can put infront of users
+- Want to get feedback and get more complex over time
 
 ##  Basics of Prototyping
+![img_10.png](img_10.png)
+![img_11.png](img_11.png)
+![img_12.png](img_12.png)
+![img_13.png](img_13.png)
+- Early vs Late Prototyping
+- Four main concepts:
+  - Representation
+    - Verbal
+    - Paper
+    - Physical
+    - Wireframe
+    - Functional
+    - Wizard of Oz
+    - Live
+  - Fidelity
+    - Low: easy to change
+    - High: harder to put together
+  - Evaluation
+    - Function
+    - Interface
+    - Performance
+  - Scope
+    - Horizontal: cover the designs aas whole, but shallow
+    - Vertical: deep dive into a few aspects of the design
 
 ## Tradeoffs in Prototyping
+- Low fidelity
+  - Pros
+    - easy to create
+  - Cons
+    - not detailed enough
+- High fidelity
+  - pros
+    - more detailed
+  - cons
+    - time-consuming
+- low fidelity -> high fidelity over time
 
 ## 5 Tips: Prototyping
+- Keep prototypes easy to change
+  - rapid revision and improvement
+- Make it clear that it's a prototype
+  - if we make it too good, they will look at superficial elements like colors and fonts
+- Be creative
+  - Our goal is get feedback
+- Evaluate risks
+  - One of biggest goal of prototyping is to minimize time to pursuing bad design
+  - HOW MUCH WOULD YOU LOSE IF YOU FOUND THAT USERS HATES THE PARTS OF YUOR DESIGN THAT THEY HAVENT SEEN YET?
+  - If more than couple of hours, try to get feedback so we dont waste time
+- Prototype for feedback
+  - prototype for the kind of feedback you want to get, not just colors or fonts
 
 ## Verbal Prototypes
+- Social desirability bias
+  - People wanna be nice to you
+  - They may not wanna hurt your feelings
+- Expert blind-spot
+  - analogies can be powerful tool to explain prototupe
 
 ## Paper Prototyping
+- Draw them out
+- Basic layout info
+- Easy to change
+- Card prototyping: can do some interaction with it: interface 1 in paper 1, click button, then go to interface 2 in paper 2
 
 ## Wizard of Oz
+- We, behind the curtain, do the things that the interface would do once it's actually implemented
+- That way, we can test out the interaction that we plan to design and how well it works
+- E.g. audiobook, person A is the user, person B is the wizard who turns pages when user says "next"
 
 ## Wireframing
+- We use some more detailed tools to mark up what details to look like
+- Font size, colors, layout
+- Can do it powerpoint, google drawings, paid product axure and balsamiq
+- Free tools: PencilProject and Framebox
 
 ## Physical Prototypes
+- It doesn't have to actually work
+- Lots of elements we can test without actually making it work
+- Bluetooth device that can press button, we can just make a fake one that looks like it or just a cardboard cutout
+- Evaluate the intuitiveness of the design
+- Hold something in your hand to see how it feels or works in the real world in different contexts
 
 ## Exercise: Prototyping Pros and cons
+![img_14.png](img_14.png)
 
 ## Design Life Cycle Revisited
+- We go around the design life cycle multiple times
+- Over time, we go from low fidelity to high fidelity as we go around the cycle multiple times
 
 ## Multi-Level Prototyping
+- Use sketches first, then wireframes, then functional prototypes
+- Bottom-up approach: design individual screens first, then design overall screen flow
+- Top-down approach: design overall screen flow first, then design individual screens
+- The points of this is that at any time, prototyping can and should exist at multiple levels of fidelity
 
 ## Exploring HCI: Prototyping
-
+- Need to get creative with prototyping
+- Gesture or voice interface, we can use Wizard of Oz
+- AR? Need to get creative
 
 # 3.6: Evaluation
 
