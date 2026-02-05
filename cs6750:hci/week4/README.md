@@ -98,14 +98,14 @@ Lesson 3.6 (Evaluation)
 - We gonna need to teach user how to use new functionality
 
 ## Learning Curves
-![img_1.png](img_1.png)
-![img_2.png](img_2.png)
+![img_1.png](./image/img_1.png)
+![img_2.png](./image/img_2.png)
 - We want a learning curve that grows quickly with little experience
 - Rapid learning curve: expertise grows quickly, with relatively lesser experience
 - If we use affordances and good representations, we can start expertise at a higher level
 
 ## User Error: Slips and Mistakes
-![img_3.png](img_3.png)
+![img_3.png](./image/img_3.png)
 - Any user error is a failure of design
 
 
@@ -162,7 +162,7 @@ Lesson 3.6 (Evaluation)
 - The task is at the heart of HCI
 
 ## GOMS Model
-![img_4.png](img_4.png)
+![img_4.png](./image/img_4.png)
 - Human information processing model
 - It builds off the processor of the human's role in a system
 - GOMS stands for Goals, Operators, Methods, and Selection rules
@@ -172,10 +172,10 @@ Lesson 3.6 (Evaluation)
   - Selection rules: guidelines for choosing between different methods
 
 ## GOMS Model in Action
-![img_5.png](img_5.png)
+![img_5.png](./image/img_5.png)
 
 ## Design Challenge: Security System 1
-![img_6.png](img_6.png)
+![img_6.png](./image/img_6.png)
 
 ## Strengths and Weaknesses of GOMS
 - Weakness
@@ -212,7 +212,7 @@ Lesson 3.6 (Evaluation)
 - Both approaches has significant values
 
 ## Cognitive Task Analysis
-![img_9.png](img_9.png)
+![img_9.png](./image/img_9.png)
 - Type of method of evaluation of how people complete task
 - Cognitive task analyses are concerned with the underlying thought process associated with performing a task
 - Most methods follow this sequence
@@ -223,8 +223,8 @@ Lesson 3.6 (Evaluation)
   - Format results for intended application
 
 ## Hierarchical Task Analysis
-![img_7.png](img_7.png)
-![img_8.png](img_8.png)
+![img_7.png](./image/img_7.png)
+![img_8.png](./image/img_8.png)
 - Advocates building models of human reasoning and decision-making in complex task
 - Tips
   - Abstract out unnecessary details for a certain level of abstraction
@@ -267,10 +267,10 @@ Lesson 3.6 (Evaluation)
 - Want to get feedback and get more complex over time
 
 ##  Basics of Prototyping
-![img_10.png](img_10.png)
-![img_11.png](img_11.png)
-![img_12.png](img_12.png)
-![img_13.png](img_13.png)
+![img_10.png](./image/img_10.png)
+![img_11.png](./image/img_11.png)
+![img_12.png](./image/img_12.png)
+![img_13.png](./image/img_13.png)
 - Early vs Late Prototyping
 - Four main concepts:
   - Representation
@@ -351,7 +351,7 @@ Lesson 3.6 (Evaluation)
 - Hold something in your hand to see how it feels or works in the real world in different contexts
 
 ## Exercise: Prototyping Pros and cons
-![img_14.png](img_14.png)
+![img_14.png](./image/img_14.png)
 
 ## Design Life Cycle Revisited
 - We go around the design life cycle multiple times
@@ -427,7 +427,7 @@ Lesson 3.6 (Evaluation)
   - Field setting
 
 ## Evaluation Design
-![img_15.png](img_15.png)
+![img_15.png](./image/img_15.png)
 1. Define the task
 2. Define performance measures - avoid confirmation bias
 3. Develop the experiment 
@@ -531,9 +531,9 @@ Ways:
 - See if difference is big enough to be statistically significant, could be random chance
 
 ## Quantitative Data and Empirical Tests
-![img_16.png](img_16.png)
-![img_17.png](img_17.png)
-![img_18.png](img_18.png)
+![img_16.png](./image/img_16.png)
+![img_17.png](./image/img_17.png)
+![img_18.png](./image/img_18.png)
 - Nominal
   - Chi-square test: check to see distribution of value in buckets
   - Are the difference big enough to be statistically significant? Or just random chance?
@@ -544,21 +544,63 @@ Ways:
   - How big the difference is dependent on the standard deviation of the data
 
 ## Special Statistical Tests
-
+- When you have >2 levels of an independent variable, avoid repeated pairwise tests (inflates Type I error / false positives)
+- For nominal/ordinal data:
+  - Use one overall Chi\-squared test across all levels, then (only if significant) do follow\-up pairwise comparisons to locate the difference
+- For interval/ratio data with \>2 groups:
+  - Use a one\-way ANOVA (overall difference), then follow with pairwise t\-tests if significant
+  - Two\-way ANOVA supports two independent variables and can reveal interaction effects
+- For non\-categorical independent variables (interval/ratio predictors):
+  - Use regression (e.g., linear/logistic); report strength of fit, not just a binary reject/fail\-to\-reject
+- For binary outcomes per trial (success/failure):
+  - Use a binomial test (one\-sample vs a baseline rate; two\-sample to compare success rates between conditions)
 
 ## Summary of Empirical Tests
+![img_19.png](./image/img_19.png)
 
 ## 5 Tips: Empirical Evaluation
+- Control what you can, document what you can't
+  - Try to make treatment as identical as possible, if not possible document them
+- Limit your variables
+  - Focus on varying on one or two things and monitor handful of things in response
+  - Nothing wrong, modify one variable and monitor one variable
+- Work backwards
+  - Decide at the start what question what we want to answer
+  - Decide the analysis you want to use
+  - Decide what data we wanna gather
+- Script your analyses in advance
+  - Ronald coase "if you torture the data long enough, it will confess to anything"
+  - If we try many different analyses, we may find something that looks significant but actually is just random chance
+- Pay attention to power
+  - If we want to detect a small effect, we need more participants
+  - If we want to detect a large effect, we need less participants
 
 ## Predictive Evaluation
+- Predictive evaluation is best used as a rapid, low-cost substitute only when real user testing isn’t feasible 
+- (better than nothing, not a replacement for qualitative or empirical evaluation)
 
 ## Types of Predictive Evaluation
+- 
 
 ## Cognitive Walkthrough
+- Stepped thru the process of interacting with an interface, mentally in each stage what the user seeing and thinking and doing
+- At each step, check the Gulf of Execution: is the next action discoverable/obvious given what the user sees?
+- At each step, check the Gulf of Evaluation: does the system provide feedback that clearly confirms what happened and that it worked?
+- Record breakdowns where the user might hesitate, choose the wrong action, or misinterpret feedback.
+- Watch for missing or ambiguous feedback (e.g., note saved vs. not saved), not just whether the flow “works”.
+- Include exit paths like cancel/undo, and verify the UI communicates the outcome (e.g., *Saved* vs. *Canceled*) explicitly, not only through implicit state changes.
+- Main limitation: the evaluator is often the designer, so bias/expert blind spot can hide issues unless you deliberately “roleplay” a novice.
 
 ## Evaluating Prototypes 
+- Qualitative analysis
+- Quantitative analysis
+- Wizard of Oz
+- Predictive evaluation
+- To constantly apply multiple evaluation techniques to center our designs on the user
 
 ## Exercise: Evaluation Pros and Cons
+![img_20.png](./image/img_20.png)
 
 ## Exploring HCI: Evaluation
+- What kind of evaluation do we choose, and why? 
 
