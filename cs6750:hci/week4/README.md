@@ -371,32 +371,180 @@ Lesson 3.6 (Evaluation)
 # 3.6: Evaluation
 
 ## Three Types of Evaluation
+- 3 categories
+- Qualitative
+  - Evaluation that emphasizes the totality of a phonemenon
+  - What they like, dislike
+- Empirical
+  - Evaluation based on numeric summaries or observation of phenomenon
+  - controlled experiments
+- Predictive
+  - Evaluation based on systematic application of pre-established principles and heuristics
 
 ## Evaluation Terminology
+- Reliability
+  - Whether a measure consistently returns the smae results for the same phenomenon
+- Validity
+  - Whether a measure's results actually reflect the underlying phenomenon
+  - Can be reliable but not valid
+- Generalizability
+  - Whether a measure's results can be used to predict phenomena beyond what it measured
+  - e.g. measuring usability of a website for college students may not generalize to older adults
+- Precision
+  - The level of detail a measure supplies
+  - 1.30 vs 1.3012 seconds
 
 ## 5 tips: What to Evaluate
+- Efficiency
+  - How quickly can users complete tasks
+  - Time users, or predictive models
+- Accuracy
+  - How many errors do users commit when completing tasks
+  - Ideally, we want to reduce number of errors when users complete tasks
+- Learnability
+  - Sit user down, define expertise, see how long it takes to reach that expertise
+- Memorability
+    - How easily can users re-learn the system after a period of time
+- Satisfaction
+  - Cognitive load while they use the system or enjoyment of the system
+  - Avoid social desirability bias by e.g. find out how many participants actually download an app they tested after the session is over
+  - It's important at the start what we're evaluating, what data we gathering, and how we analyze it
 
 ## Evaluation Timeline
+- Overtime, evaluation method changes
+- From formative to summative
+- Formative
+  - Evaluation with the intention of improving the interface going forward
+- Summative
+  - Conclude the design process
+  - Hopefully we don't come to this point
+- Early evaluation is more qualitative and predictive
+- Later evaluation is more empirical
+- Predictive tends to be similar to qualitative, they inform how we revise our interface over time
+- Low fidelity
+  - Lab setting
+- High fidelity
+  - Field setting
 
 ## Evaluation Design
+![img_15.png](img_15.png)
+1. Define the task
+2. Define performance measures - avoid confirmation bias
+3. Develop the experiment 
+4. Recruit participants
+5. Do the experiment
+6. Analyze the data
+7. Summarize the data
+
+
+- Can loop thru the design cycle multiple times
 
 ## Qualitative Evaluation
+- Getting qualitative feedback from users
+- What do you like? Dislike?
+- What do you think about this feature?
+- What was your goal when you clicked this button?
+
+
+Ways:
+- Interviews
+- Think aloud protocols
+- Focus groups
+- Surveys
+- Post Event Protocols
 
 ## Designing a Qualitative Evaluation
+- Prior Experience vs Live Demonstration
+- Synchronous vs Asynchronous (easy to carry out with larger population)
+- One interface vs Multiple prototypes
+  - Multiple prototypes: to compare (may vary the order to avoid bias)
+- Think Aloud Protocol vs Post-Event Protocol
+  - Think aloud: ask user to think out loud, explain what they are thinking while they use the system
+  - Post-event: ask user to reflect on their experience after they used the system, may forget difficulties at the start
+  - use think aloud earlier, then post-event
+- Individual vs Group
+  - Groups: better explanation, more ideas, bias towards stronger personalities
+  - Individuals: force the user the only source of knowledge, no bias
 
 ## Capturing Qualitative Evaluation 
+- Video Recording
+  - Pros
+    - automated: runs automatically, e.g. screen recording software
+    - comprehensive: captures everything, e.g. video camera
+    - passive: let's us focus admin the session
+  - Cons
+    - intrusive: uncomfortable being recorded
+    - Non-analyzable: hard to analyze, e.g. 200 hours of footage 
+    - Screenless: 
+- Note-taking
+  - Pros
+    - Cheap
+    - Non-intrusive
+    - Analyzable
+  - Cons
+    - Slow: can't keep up with interaction
+    - Manual: need to write, ideally have 2 people involve, one ask, one take notes
+    - Limited: e.g. how long user hesitate, hard to capture
+- Software Logging
+  - Pros
+    - Automated
+    - Passive
+    - Analyzable: data or text format
+  - Cons
+    - Limited: can capture only expressed in the software
+    - Narrow: what the user does, not how long user look at something
+    - Tech-Sensitive: Need prototype that can log data
 
 ## 5 Tips: Qualitative Evaluation
+- Run pilot studies
+  - Experiment with friends, families before actual study
+- Focus on feedback
+  - Don't need to explain the rationale behind design decisions
+- Use questions when users get stuck
+  - Less instructional
+- Instruct users what to do, not how
+  - Let them figure out how to do it
+  - If they do it differently than you expect, that's useful info
+- Capture satisfaction
+  - Ask users how they feel about the system
 
 ## Empirical Evaluation
+- Evaluate something formal, numeric
+- Counting errors, summarizing time on task
+- The goal is to get strong conclusions!
+- How can we show there is a difference between two interfaces?
 
 ## Designing a Empirical Evaluation
+- Multiple condition we call treatments
+- Treatment: What a participant does in an experiment, e.g. different colors, layouts
+- If each participant experiences only one treatment, it's between-subjects design
+  - Comparison between two groups of subjects receiving different treatments
+- If each participant experiences all treatments, it's within-subjects design
+  - Comparison within one group experiencing multiple treatments
+  - Which treatment user see first?
+  - Random assignment: Using random chance to decide what treatment each participant receives
 
 ## Hypotheses Testing
+- E.g.what color should we use to alert drive
+- Orange vs Green, orange is more quickly noticeable by 0.2 seconds
+- Do hypotheses testing: Testing whether or not the data allows us to conclude a difference exists
+- See if difference is big enough to be statistically significant, could be random chance
 
-## 5Quantitative Data and Empirical Tests
+## Quantitative Data and Empirical Tests
+![img_16.png](img_16.png)
+![img_17.png](img_17.png)
+![img_18.png](img_18.png)
+- Nominal
+  - Chi-square test: check to see distribution of value in buckets
+  - Are the difference big enough to be statistically significant? Or just random chance?
+- Ordinal: Kolmogorov-Smirnov test: categories are ranked
+  - Sensitive to the fact that the categories are ranked
+- Interval/Ratio: Student's t-test: numeric values
+  - All we need to know is that the difference is big enough to be statistically significant to justify that one is actually different from the other
+  - How big the difference is dependent on the standard deviation of the data
 
 ## Special Statistical Tests
+
 
 ## Summary of Empirical Tests
 
