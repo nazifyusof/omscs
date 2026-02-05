@@ -580,7 +580,9 @@ Ways:
 - (better than nothing, not a replacement for qualitative or empirical evaluation)
 
 ## Types of Predictive Evaluation
-- 
+- Heuristic evaluation: give the interface + heuristics to multiple experts; each evaluates independently and reports heuristic violations
+- Model-based evaluation: trace a user task model (e.g., GOMS) through the new interface and compare against an existing workflow to judge efficiency/fit for target users
+- Simulation-based evaluation: build an agent that interacts like a human user and run many trials to test prototypes at scale (high effort to build, high payoff for large/high-stakes systems)
 
 ## Cognitive Walkthrough
 - Stepped thru the process of interacting with an interface, mentally in each stage what the user seeing and thinking and doing
