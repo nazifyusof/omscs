@@ -49,7 +49,7 @@ Lesson 3.8 (Conclusion to Methods and Best of Georgia Tech HCI)
 - Does he get smarter? No, but eh could do more complex tasks
 
 ## Paper Spotlight: How a Cockpit Remembers its Speeds
-![img.png](img.png)
+![img.png](./image/img.png)
 - Edwin Hutchins: The pilots, the systems, and the environment work together to remember the airspeed, not just the pilots
 - When plane wanna land, pilot gotta remember airspeed to change wing config
 - Problem: lots of stuff going on, high cognitive load
@@ -121,7 +121,7 @@ Lesson 3.8 (Conclusion to Methods and Best of Georgia Tech HCI)
 - Second view: people simply act on the world, plans are just interpretations of actions
 
 ## Activity Theory
-![img_1.png](img_1.png)
+![img_1.png](./image/img_1.png)
 - Predates HCI, three main contributions of activity theory to HCI
   - Why is the user do the task in the first place
   - Puts on emphasis on the idea that we can create low level operations from higher level actions
@@ -260,54 +260,188 @@ Three goals of HCI:
 # 2.10: Conclusion to Principles
 
 ## Zooming out: Human as Processor
+- Humans actions are approached almost computationally
+- Focus on efficiency, accuracy, speed
 
 ## Zooming out: Human as Predictor
+- Task focus
+- Actively looking at the task, predicting what to do next, anticipating needs
+- 15 design principles
+- Understand their mental models, design to match their expectations
+- Expert blind spots
 
 ## Zooming out: Human as Participant
-
-## Reflections: HCI Principles
-
-## Design Challenge: Designing Audiobooks for Exercise
-
-## Explore HCI: HCI Principles
+- User is not merely interacting with the system to accomplish a task, they are interacting with the system as a whole
+- Use interface to create more equal society for all people
 
 ## 5 tips: On-Screen UI Design
+- Use a grid
+  - Highlight important content
+  - E.g. newspaper layout
+- Use whitespace
+  - works with grids to provide context and guide user's visual perception
+- Know your Gestalt principles
+  - Proximity, similarity, continuity, closure, figure/ground
+- Reduce clutter
+  - Above three tips help reduce clutter
+- Design in grayscale
+  - E.g. traffic light, red-green colorblindness
+  - Even though color is important, design should not rely solely on color
+  - Red always on top, green on bottom
 
 ## Only Half of the Picture
+- Know your user
+- You are not your user
+- These guidelines and principles are only half of the picture, the other half are the methods
 
 # 3.7: HCI and Agile Development
 
 ## The Demands for Rapid HCI
+![img_2.png](./image/img_2.png)
+- "A delayed game is eventually good, a rushed game is forever bad" 
+- Above no longer applies, cause we can update software after release
+- Build fast, iterate often
 
 ## Exercise: When to go Agile
+![img_3.png](./image/img_3.png)
 
 ## When to go Agile
+![img_4.png](./image/img_4.png)
+- Agile can only be used at certain times
 
 ## Paper Spotlight: Towards a Framework for Integrating Agile Development and User-Centered Design
+- Steve Chamberlain
+- Agile rely on iterative development
+- Heavy emphasis on user's role and team coherence
+- 5 principles on integrating User Centric Design and Agile
+  - User Involvement
+  - Collaboration and Culture
+  - Prototyping
+  - Project Lifecycle
+  - Project Management
 
 ## Live Prototyping
+- Optimizely: drag and drop to create different versions of a webpage
+- Cost of failure is low, so we can try many different designs
+- Possible benefits might outweigh the cost of failure
 
 ## A/B Testing
+- Rapid software testing between A and B
+- Small changes with real users
+- B is the improved version of A
+- 
 
 ## Agile HCI in the Design Life Cycle
+- Doesnt replace design life cycle, but "caffeinates" it
+- Changes the rate at which we go through the design life cycle
 
 ## 5 Tips: Mitigating risk in HCI and Agile Development
+- Start more traditional
+  - Only do Agile with have something up and running, but we need something solid to begin with
+- Focus on small changes
+- Adopt a parallel track method
+  - Usually have short 2 -week sprints
+- Be careful with consistency
+  - if our website has frequent users, we want to be conservative about how we manage user's expectation
+- Nest your design cycles
+  - Each cycle give a bit info
+  - Collect info from each cycle to inform the next cycle
 
 ## Exploring HCI: Agile Development
-
 
 # 3.8: Conclusion to Methods
 
 ## Designing Audiobooks for Exercise 1
+- Needfinding
+  - Go to park and observe people exercising
+  - Surveys
+- Design alternatives
+  - Different scenarios and personas
+- Prototyping
+  - wizard of oz
+  - paper prototype
+- Evaluation
+  - get feedback from users
+- We still don't have yet, what next? Go back to needfinding
 
 ## Designing Audiobooks for Exercise 2
+- Needfinding (iterate, don’t restart)
+  - Use what you learned from prototyping + evaluation to refine your understanding of the task (e.g., gestures still hard even “hands-free” because arms move a lot)
+  - Add new questions based on feedback (e.g., users ask for rewind → find out how common/important it is)
+- Design alternatives (expand + revise ideas)
+  - Build on current concepts instead of tossing them out
+  - Brainstorm using the same personas/scenarios, plus any new insights from iteration 1
+  - Consider new concepts that only become obvious after seeing the first prototype in action
+- Prototyping (build what’s feasible, fast)
+  - Increase fidelity where you can, but adjust when tech/resources aren’t ready
+  - Keep the focus on usability by “faking” hard parts:
+  - simplified voice commands (even crude recognition)
+  - wireframes instead of full app integration
+  - Wizard-of-Oz support (a person triggers playback/behaviors behind the scenes)
+  - Drop/avoid prototype paths that violate constraints (too expensive, not truly hands-free, etc.)
+- Evaluation (more objective over time)
+  - Still collect qualitative feedback (experience, frustrations, expectations)
+  - Add more empirical measures as fidelity rises:
+  - time to complete key actions
+  - failure points / what blocks interaction (noise breaks voice, interaction is too distracting, etc.)
+- Next step
+  - No final product yet but higher fidelity prototype → synthesize results and loop back to Needfinding for the next iteration
 
 ## Designing Audiobooks for Exercise 3
+- Needfinding (refined understanding)
+  - Hands-free interaction is generally more usable for exercisers.
+  - Pure gestures are still not technologically feasible/reliable enough.
+  - Voice commands fail in common real contexts (e.g., loud areas).
+- Design alternatives (Iteration 3: hybrid concept)
+  - Propose a hybrid interface: voice + on-screen touch are complementary, not competing.
+  - Primary mode: voice (maximizes hands-free usability most of the time).
+  - Fallback mode: touch when voice is unreliable (noise, recognition failure).
+  - Goal: maintain full functionality in all environments while minimizing friction.
+- Prototyping (merge previous prototypes, keep fidelity low)
+  - Combine the prior voice prototype and screen-based prototype into one prototype.
+  - Keep it low-fidelity initially because this specific integration hasn’t been validated and higher-fidelity builds are expensive.
+- Evaluation (gate to implementation)
+  - Test whether the hybrid actually resolves the earlier weaknesses:
+  - usability in loud areas (touch fallback works)
+  - reduced gulf of execution (voice reduces required on-screen navigation)
+  - If results are “good enough,” proceed to implementation/deployment (move beyond prototyping).
 
 ## Designing Audiobooks for Exercise 4
+- Post-launch needfinding (now data-driven)
+  - Use usage analytics, error logs, support tickets, and App Store reviews as needfinding inputs.
+  - Real users reveal unexpected contexts and edge cases (e.g., people using it while driving).
+  - New/updated requirements emerge
+  - Subtle control needs (e.g., more precise rewind/fast-forward).
+  - New feature demands driven by real environments (e.g., coexist with a navigation app while driving).
+- Design alternatives (in response to live needs)
+  - Brainstorm targeted improvements (e.g., “back 5 seconds” vs “back 15 seconds”; voice vs touch tradeoffs in cars).
+- Prototyping (small, cheap experiments first)
+  - Prototype incremental controls/commands before committing to expensive builds.
+  - Changes can be scoped as small UI tweaks or larger interaction redesigns.
+- Evaluation (at scale)
+  - Evaluate with A/B tests, telemetry, and real-world task success/failure rates—beyond lab sessions.
+    - Release => repeat (nested cycles)
+    - Weekly patches, monthly feature updates, yearly redesigns.
+  - The lifecycle becomes iterative forever, unless the product is abandoned.
 
 ## Research Methods Meet Design Principles
+![img_5.png](./image/img_5.png)
 
 ## Exploring HCI: HCI Methods Revisited
 
 ## Approaches to User-Centered Design
+- Participatory Design
+  - Users are part of the design team
+  - Omnipresent thruout the design process
+  - Careful not to over-represent that one user's view
+- Action research
+  - Addreses an immediate problem while also studying the process of solving that problem
+  - Action research undertaken by the actual users
+- Design-based research
+  - Same like action research, but can be don by outside researchers as well
+  - To improve the theory of our problem
+
+
+- Iterations still play a key role in all these approaches
+- Adjusting to new trends and technologies
+  
