@@ -1,34 +1,30 @@
-- [Content](#content)
-- [Assignments](#assignments)
-- [Miscellany](#miscellany)
+# Content
+Read papers
+- lesson 1.1
+- lesson 1.2
+- lesson 1.3 (all optional)
+- lesson 2.1
+  ~~- lesson 3.1~~
+- lesson 3.2
+  ~~- lesson 3.3~~
 
-- [Chapter 4 \– Scientific Foundations \(MacKenzie\)](#chapter-4---scientific-foundations-mackenzie)
+
+# Assignments
+Prepare for and complete Quiz 1 (2.5)
+Design a needfinding plan for your individual project (2)
+Begin to execute the needfinding plan for your individual project (1)
+
+# Miscellany
+Complete peer reviews on Homework 4 (1)
+
+# TOC
+- [Chapter 4 \– Scientific Foundations \(MacKenzie\)](#chapter-4--scientific-foundations-mackenzie)
     - [1\. What Is Research\?](#1-what-is-research)
-        - [1\.1 Three Definitions of Research](#11-three-definitions-of-research)
-            - [\(1\) Careful or diligent search](#1-careful-or-diligent-search)
-            - [\(2\) Collecting information about a subject](#2-collecting-information-about-a-subject)
-            - [\(3\) Investigation or experimentation aimed at:](#3-investigation-or-experimentation-aimed-at)
-        - [1\.2 Theory vs Law](#12-theory-vs-law)
-        - [1\.3 Research Must Be Published](#13-research-must-be-published)
-        - [1\.4 Citations, References, and Impact](#14-citations-references-and-impact)
-        - [1\.5 Research Must Be Reproducible](#15-research-must-be-reproducible)
-        - [1\.6 Research vs Engineering vs Design](#16-research-vs-engineering-vs-design)
     - [2\. What Is Empirical Research\?](#2-what-is-empirical-research)
     - [3\. Research Methods](#3-research-methods)
-        - [3\.1 Observational Method](#31-observational-method)
-        - [3\.2 Experimental Method \(Scientific Method\)](#32-experimental-method-scientific-method)
-        - [3\.3 Correlational Method](#33-correlational-method)
     - [4\. Observation and Measurement](#4-observation-and-measurement)
-        - [4\.1 Measurement Scales](#41-measurement-scales)
-            - [Nominal \(Categorical\)](#nominal-categorical)
-            - [Ordinal](#ordinal)
-            - [Interval](#interval)
-            - [Ratio \(Most Powerful\)](#ratio-most-powerful)
     - [5\. Research Questions](#5-research-questions)
     - [6\. Internal and External Validity](#6-internal-and-external-validity)
-        - [Internal Validity](#internal-validity)
-        - [External Validity](#external-validity)
-        - [Tradeoff / Ecological Validity](#tradeoff--ecological-validity)
     - [7\. Comparative Evaluations](#7-comparative-evaluations)
     - [8\. Circumstantial vs Causal Relationships](#8-circumstantial-vs-causal-relationships)
 
@@ -40,61 +36,77 @@
     - [5\. Combining Surveys with Other Methods](#5-combining-surveys-with-other-methods)
     - [6\. Research Goals \& Constructs](#6-research-goals--constructs)
     - [7\. Population \& Sampling](#7-population--sampling)
-    - [8\. Probability vs Non-Probability Sampling](#8-probability-vs-non-probability-sampling)
+    - [8\. Probability vs Non\-Probability Sampling](#8-probability-vs-non-probability-sampling)
     - [9\. Sample Size \& Statistical Precision](#9-sample-size--statistical-precision)
     - [10\. Questionnaire Design](#10-questionnaire-design)
-        - [Open\-Ended Questions](#open-ended-questions)
-        - [Closed\-Ended Questions](#closed-ended-questions)
-        - [Ratings](#ratings)
     - [11\. Rating Scales](#11-rating-scales)
-        - [Unipolar Constructs](#unipolar-constructs)
-        - [Bipolar Constructs](#bipolar-constructs)
     - [12\. Major Questionnaire Biases](#12-major-questionnaire-biases)
-        - [1\. Satisficing](#1-satisficing)
-            - [Weak satisficing](#weak-satisficing)
-            - [Strong satisficing](#strong-satisficing)
-            - [Mitigation](#mitigation-for-satisficing)
-        - [2\. Acquiescence Bias](#2-acquiescence-bias)
-            - [Causes](#acquiescence-causes)
-            - [Mitigation](#acquiescence-mitigation)
-        - [3\. Social Desirability Bias](#3-social-desirability-bias)
-            - [Contexts](#social-desirability-contexts)
-            - [Mitigation](#social-desirability-mitigation)
-        - [4\. Response Order Bias](#4-response-order-bias)
-            - [Primacy vs Recency](#primacy-vs-recency)
-            - [Mitigation](#response-order-mitigation)
-        - [5\. Question Order Bias](#5-question-order-bias)
-            - [Funnel approach](#funnel-approach)
-            - [Mitigation](#question-order-mitigation)
     - [13\. Questions to Avoid](#13-questions-to-avoid)
     - [14\. Visual Design Effects](#14-visual-design-effects)
     - [15\. Pretesting](#15-pretesting)
-        - [Cognitive Pretesting](#cognitive-pretesting)
-        - [Field Testing](#field-testing)
     - [16\. Paradata \& Response Metrics](#16-paradata--response-metrics)
     - [17\. Increasing Response Rates](#17-increasing-response-rates)
     - [18\. Data Cleaning](#18-data-cleaning)
     - [Most Important Essay Concepts to Remember](#most-important-essay-concepts-to-remember)
 
+- [Data Analysis and Reporting \(Expanded Notes\)](#data-analysis-and-reporting-expanded-notes)
+    - [1\. Data Preparation and Cleaning](#1-data-preparation-and-cleaning)
+    - [2\. Analysis of Closed\-Ended Responses](#2-analysis-of-closed-ended-responses)
+    - [3\. Analysis of Open\-Ended Comments](#3-analysis-of-open-ended-comments)
+    - [4\. Assessing Representativeness](#4-assessing-representativeness)
+    - [5\. Reporting Survey Findings](#5-reporting-survey-findings)
+    - [Big\-Picture Structure](#big-picture-structure)
 
-# Content
-Read papers
-- lesson 1.1
-- lesson 1.2
-- lesson 1.3 (all optional)
-- lesson 2.1
-~~- lesson 3.1~~
-- lesson 3.2
-~~- lesson 3.3~~
+- [Chapter 1 \– Historical Context \(Human\-Computer Interaction\)](#chapter-1--historical-context-human-computer-interaction)
+    - [1\. Big Picture: What This Chapter Is Doing](#1-big-picture-what-this-chapter-is-doing)
+    - [2\. Early Computing \(1940s\u20131970s\)](#2-early-computing-1940s1970s)
+    - [3\. Human Factors \u2192 HCI](#3-human-factors--hci)
+    - [4\. Vannevar Bush \– \u201cAs We May Think\u201d \(1945\)](#4-vannevar-bush--as-we-may-think-1945)
+    - [5\. Ivan Sutherland \– Sketchpad \(1962\)](#5-ivan-sutherland--sketchpad-1962)
+    - [6\. Douglas Engelbart \– The Mouse \(1963\)](#6-douglas-engelbart--the-mouse-1963)
+    - [7\. Xerox Star \(1981\)](#7-xerox-star-1981)
+    - [8\. Birth of HCI \(1983\)](#8-birth-of-hci-1983)
+    - [9\. ACM SIGCHI](#9-acm-sigchi)
+    - [10\. Card, Moran, Newell \(1983\)](#10-card-moran-newell-1983)
+    - [11\. Apple Macintosh \(1984\)](#11-apple-macintosh-1984)
+    - [12\. Growth of HCI Research](#12-growth-of-hci-research)
+    - [13\. Core Themes You Must Be Ready to Write About](#13-core-themes-you-must-be-ready-to-write-about)
+    - [14\. Key Terms to Memorize \(Simple Definitions\)](#14-key-terms-to-memorize-simple-definitions)
 
+- [Chapter 1 Notes \– The Psychopathology of Everyday Things](#chapter-1-notes--the-psychopathology-of-everyday-things)
+    - [1\. Central Thesis of the Chapter](#1-central-thesis-of-the-chapter)
+    - [2\. The \u201cNorman Door\u201d Problem](#2-the-norman-door-problem)
+    - [3\. Discoverability and Understanding](#3-discoverability-and-understanding)
+    - [4\. Human Error vs\. Design Error](#4-human-error-vs-design-error)
+    - [5\. Human\-Centered Design \(HCD\)](#5-human-centered-design-hcd)
+    - [6\. Fundamental Principles of Interaction](#6-fundamental-principles-of-interaction)
+    - [7\. Affordances](#7-affordances)
+    - [8\. Signifiers](#8-signifiers)
+    - [9\. Mapping](#9-mapping)
+    - [10\. Feedback](#10-feedback)
+    - [11\. Conceptual Models \(Most Important Concept\)](#11-conceptual-models-most-important-concept)
+    - [12\. System Image](#12-system-image)
+    - [13\. The Paradox of Technology](#13-the-paradox-of-technology)
+    - [14\. Major Essay Themes to Prepare](#14-major-essay-themes-to-prepare)
+    - [15\. Key Terms with Simple Definitions](#15-key-terms-with-simple-definitions)
 
-# Assignments
-Prepare for and complete Quiz 1 (2.5)
-Design a needfinding plan for your individual project (2)
-Begin to execute the needfinding plan for your individual project (1)
-
-# Miscellany
-Complete peer reviews on Homework 4 (1)
+- [Chapter 5 \– The CHI of Teaching Online](#chapter-5--the-chi-of-teaching-online)
+    - [Big Picture / Central Argument](#big-picture--central-argument)
+    - [Key Design Principles You Must Know](#key-design-principles-you-must-know)
+    - [Important Foundational Concepts](#important-foundational-concepts)
+    - [1\. Flexibility](#1-flexibility)
+    - [2\. Equity](#2-equity)
+    - [3\. Consistency](#3-consistency)
+    - [4\. Distributed Cognition](#4-distributed-cognition)
+    - [5\. Structure](#5-structure)
+    - [6\. Perceptibility](#6-perceptibility)
+    - [7\. Tolerance](#7-tolerance)
+    - [8\. Feedback](#8-feedback)
+    - [Important Tension in the Chapter](#important-tension-in-the-chapter)
+    - [Course Evaluation Section](#course-evaluation-section)
+    - [Potential Essay Question Themes](#potential-essay-question-themes)
+    - [Key Terms to Memorize \(with Simple Definitions\)](#key-terms-to-memorize-with-simple-definitions)
+    - [Final Big Insight](#final-big-insight)
 
 ---
 
