@@ -8,7 +8,6 @@ Read papers
 - lesson 3.2
   ~~- lesson 3.3~~
 
-
 # Assignments
 Prepare for and complete Quiz 1 (2.5)
 Design a needfinding plan for your individual project (2)
