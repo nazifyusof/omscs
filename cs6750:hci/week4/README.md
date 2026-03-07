@@ -59,7 +59,7 @@ Lesson 3.6 (Evaluation)
   - Behavior of action should be consistent across interfaces
 
 ## Representations
-![img.png](img.png)
+![img.png](./image/img.png)
 - One example is assembly instructions
 - Arrows, labels, and exploded views are all representations
 

@@ -85,7 +85,7 @@ Lesson 3.2 (Ethics and Human Research)
 - Look at the interaction of both above at the larger system
 - We look beyond just the user and the interface
 
-![img.png](img.png)
+![img.png](image/img.png)
 
 ## Designing with three views
 - Redesigning Tesla infotainment system
@@ -111,7 +111,7 @@ Participant
 - Cons: Requires real, functional interfaces
 - Cons: Subject to uncontrollable variables
 
-![img_1.png](img_1.png)
+![img_1.png](./image/img_1.png)
 
 ## User experience: Sans Design
 - UX goes beyond task via interface
@@ -180,7 +180,7 @@ Example: Thermostat
   - Dragging stuff around, making things large
 
 ## Norman's Feedback Cycle Stage
-![img_2.png](img_2.png)
+![img_2.png](./image/img_2.png)
 
 Norman ask 7 question when designing these interfaces
 - How easily can one
@@ -221,7 +221,7 @@ Norman ask 7 question when designing these interfaces
 - THe design team includes multidisciplinary skills and perspective
 
 ## Stakeholders
-![img_3.png](img_3.png)
+![img_3.png](./image/img_3.png)
 - Primary: user, who use our tool directly
 - Secondary: Dont use the tool directly, but interact with the output in some way
 - Tertiary: Never interact with tool or output, impacted by existence of tool
@@ -237,7 +237,7 @@ e.g. new grade book tool
 - Avoid over-controlling parents, impact of design to all stakeholders
 
 ## The Design Life Cycle
-![img_4.png](img_4.png)
+![img_4.png](./image/img_4.png)
 
 - Four phase design life cycle
   - Needfinding: gather task user tries to perform
@@ -247,7 +247,7 @@ e.g. new grade book tool
 - Each time we go thru the cycle, our idea and prototypes improve
 
 ## Methods for the Design Life Cycle
-![img_5.png](img_5.png)
+![img_5.png](./image/img_5.png)
 - Tools in our toolbox
 - Goal of this class is not just to understand more HCI, but also to understand how big the field of HCI actually is
 
@@ -290,7 +290,7 @@ e.g. new grade book tool
 - Mixed method: mixture of qualitative and quantitative data to paint a more complete picture of the results
 
 ## Types of Quantitative Data
-![img_6.png](img_6.png)
+![img_6.png](./image/img_6.png)
 
 - Nominal
   - Categorical data
