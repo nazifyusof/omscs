@@ -27,7 +27,7 @@ Lesson 3.4 (Design Alternatives):
 Complete peer reviews on Homework 1 (1)
 Work on additional participation credit opportunities (1.5)
 
-# 2.4: Direct Manipulation
+# 2.3: Direct Manipulation
 
 ## Direct Manipulation The Desktop Metaphor 1
 - Files and folders in desktops are to mimic physical files and folders
