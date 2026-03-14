@@ -1,18 +1,18 @@
 # Table of Contents
 
-- [1.1](#1.1)
-- [1.2](#1.2)
-- [1.3](#1.3)
-- [2.1](#2.1)
-- [2.2](#2.2)
-- [2.3](#2.3)
-- [2.4](#2.4)
-- [2.5](#2.5)
-- [3.1](#3.1)
-- [3.2](#3.2)
-- [3.3](#3.3)
-- [3.4](#3.4)
-- [3.5](#3.5)
+- [1.1 - Introduction to HCI & AI](#11)
+- [1.2 - ](#12)
+- [1.3 - Exploring HCI: Technologies, Domains & Ideas](#13)
+- [2.1 - HCI Principles: User Views & Task Focus](#21)
+- [2.2 - Feedback Cycles & Gulfs of Execution/Evaluation](#22)
+- [2.3 - Direct Manipulation & Invisible Interfaces](#23)
+- [2.4 - Human Information Processing & Cognition](#24)
+- [2.5 - Design Principles & Heuristics](#25)
+- [3.1 - User-Centered Design Methods](#31)
+- [3.2 - Research Ethics & Human Subjects](#32)
+- [3.3 - Needfinding & Requirements Gathering](#33)
+- [3.4 - Design Alternatives & Brainstorming](#34)
+- [3.5 - Prototyping Methods & Techniques](#35)
 
 # 1.1
 
@@ -40,6 +40,7 @@
 - Jakob Nielsen, AI is introducing the 3rd user-interface paradigm in computing history, in which human tell computers what they want, now how to do it
 
 # 1.2
+
 # 1.3
 
 ## Introduction to exploring HCI
