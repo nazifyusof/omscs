@@ -104,7 +104,6 @@
 - Computer supported cooperative work
 - How do we use computers to support people working together?
 - Distributed teams are an example of CSCW
-- ![img.png](img.png)
 
 ## Idea: Social Computing
 - How computers affect how we interact and socialize
@@ -214,8 +213,6 @@
 - Look at the interaction of both above at the larger system
 - We look beyond just the user and the interface
 
-![img.png](image/img.png)
-
 ## Designing with three views
 - Redesigning Tesla infotainment system
 
@@ -240,7 +237,7 @@ Participant
 - Cons: Requires real, functional interfaces
 - Cons: Subject to uncontrollable variables
 
-![img_1.png](./image/img_1.png)
+![img_3.png](./image/img_3.png)
 
 ## User experience: Sans Design
 - UX goes beyond task via interface
@@ -311,7 +308,7 @@ Example: Thermostat
     - Dragging stuff around, making things large
 
 ## Norman's Feedback Cycle Stage
-![img_2.png](./image/img_2.png)
+![img_4.png](./image/img_4.png)
 
 Norman ask 7 question when designing these interfaces
 - How easily can one
@@ -357,9 +354,8 @@ Norman ask 7 question when designing these interfaces
     - Direct engagement
         - If we're moving files, we want to see the files moving
         - In game, we should directly control our avatar
-        - Diret manipulation is a powerful tool to shorten the distance
-
-![img.png](./image/img.png)
+        - Direct manipulation is a powerful tool to shorten the distance
+![img_5.png](./image/img_5.png)
 
 ## Exploring HCI: Direct Manipulation and VR
 - Able to view what they deign in 3d
@@ -450,7 +446,7 @@ Norman ask 7 question when designing these interfaces
 - Can't filter out touch feedback, but unlike listening, it is only available to the person touching
 
 ## Memory
-![img_1.png](./image/img_1.png)
+![img_6.png](./image/img_6.png)
 
 ## Memory: perceptual store
 - Working memory, very short term, few seconds
@@ -466,7 +462,6 @@ Norman ask 7 question when designing these interfaces
 - More recent research, only four to five chunks at a time
 - 2 principles
     - Chunking - grouping together several items into a single meaningful item e.g.
-        - ![img_2.png](./image/img_2.png)
         - Right most the easiest to remember, we dont remember letters, we remember words
         - Middle next, then left most the hardest
         - Recognizing is easier than recall!
@@ -482,7 +477,7 @@ Norman ask 7 question when designing these interfaces
 - E.x. remembering flash cards, formulas, vocab
 
 ## Cognition
-![img_3.png](./image/img_3.png)
+![img_8.png](./image/img_8.png)
 
 ## Cognition: Learning
 - Procedural learning: how to do something
@@ -542,8 +537,7 @@ Norman ask 7 question when designing these interfaces
     - Larry Constantine's and Lucy Lockwood's 6 principles
     - Ronald Mace's 7 principles of universal design
 - In our case, we learn about 15
-  ![img_4.png](./image/img_4.png)
-  ![img_5.png](./image/img_5.png)
+  ![img_10.png](./image/img_10.png)
 
 ## Discoverability
 - Norman: Is it possible to even figure out what actions are possible and how to perform them
@@ -555,7 +549,6 @@ Norman ask 7 question when designing these interfaces
 - Walk on the line between discoverability and simplicity
 
 ## Simplicity
-![img_6.png](./image/img_6.png)
 - More discoverable, more complex
 - Nielsen: Dialogues should not contain information which is irrelevant or rarely needed. Every extra unit of information in a dialogue competes with the relevant units of information and diminishes their relative visibility.
 - Constantine: The design should make simple, common tasks easy to perform
@@ -575,7 +568,6 @@ Norman ask 7 question when designing these interfaces
 - Signifiers: in context instruction like arrow where to swipe, create affordance, match perceived affordance to actual affordance
 
 ## Mapping
-![img_7.png](./image/img_7.png)
 - Norman: mapping is a technical term, meaning the relationship between the elements of two sets of things
 - Nielsen: The system should speak the user's language, with words, phrases and concepts familiar to the user, rather than system-oriented terms. Follow real-world conventions, making information appear in a natural and logical order.
 - Mapping vs Affordances
@@ -628,7 +620,6 @@ Norman ask 7 question when designing these interfaces
 - Mace: Appropriate size and space is provided for approach, reach, manipulation, and use regardless of user's body size, posture, or mobility.
 
 ## Structure
-![img_8.png](./image/img_8.png)
 - Overall architecture of the interface
 - Constantine: Design should organize the user interface purposefully, in meaningful and useful ways based on clear, consistent models that are apparent and recognizable to users.
 
@@ -712,7 +703,6 @@ Norman ask 7 question when designing these interfaces
 - THe design team includes multidisciplinary skills and perspective
 
 ## Stakeholders
-![img_3.png](./image/img_3.png)
 - Primary: user, who use our tool directly
 - Secondary: Dont use the tool directly, but interact with the output in some way
 - Tertiary: Never interact with tool or output, impacted by existence of tool
@@ -728,8 +718,6 @@ e.g. new grade book tool
 - Avoid over-controlling parents, impact of design to all stakeholders
 
 ## The Design Life Cycle
-![img_4.png](./image/img_4.png)
-
 - Four phase design life cycle
     - Needfinding: gather task user tries to perform
     - Design Alternatives: early ideas
@@ -738,7 +726,6 @@ e.g. new grade book tool
 - Each time we go thru the cycle, our idea and prototypes improve
 
 ## Methods for the Design Life Cycle
-![img_5.png](./image/img_5.png)
 - Tools in our toolbox
 - Goal of this class is not just to understand more HCI, but also to understand how big the field of HCI actually is
 
@@ -781,7 +768,7 @@ e.g. new grade book tool
 - Mixed method: mixture of qualitative and quantitative data to paint a more complete picture of the results
 
 ## Types of Quantitative Data
-![img_6.png](./image/img_6.png)
+![img_17.png](./image/img_17.png)
 
 - Nominal
     - Categorical data
@@ -1062,10 +1049,10 @@ e.g. new grade book tool
 - Data logs  of user interactions
 
 ## Exercise: Needfinding Pros and Cons
-![img.png](./image/img_9.png)
+![img_18.png](./image/img_18.png)
 
 ## Iterative Needfinding
-![img.png](./image/img_10.png)
+![img_19.png](./image/img_19.png)
 - Needfinding is not one-and-done
 - We need to revisit it throughout the design process, like design life-cycle
 
@@ -1188,7 +1175,9 @@ e.g. new grade book tool
 ## Timelines
 - Take the persona and stretch them over time
 - "Journey maps"
-  ![img.png](./image/img_11.png)
+- |-----------|-------------------|------------------|------------------|
+- 0 min       10 min              20 min             30 min             40 min
+- Decide      Go to park           Listen to music     Listen to audiobook  Go home
 - Can see how user interacts with the system over time
 - Mood, pain points, touchpoints
 - What they're thinking, feeling, so we can integrate our design into their life better
@@ -1203,13 +1192,13 @@ e.g. new grade book tool
 - Storyboard: could be a video mock up
 
 ##  User Modelling
-![img.png](./image/img_12.png)
+![img_21.png](./image/img_21.png)
 - Personas are more personal
 - User model are more objective, give measureable and comparable view of the user
 -
 
 ## Exercise: Design Alternatives Pros and Cons
-![img_1.png](./image/img_13.png)
+![img_22.png](./image/img_22.png)
 
 ## Exploring Ideas
 - Some case scenario by dr joyner
@@ -1222,10 +1211,10 @@ e.g. new grade book tool
 - Want to get feedback and get more complex over time
 
 ##  Basics of Prototyping
-![img_10.png](./image/img_10.png)
-![img_11.png](./image/img_11.png)
-![img_12.png](./image/img_12.png)
-![img_13.png](./image/img_13.png)
+![img_23.png](./image/img_23.png)
+![img_24.png](./image/img_24.png)
+![img_25.png](./image/img_25.png)
+![img_26.png](./image/img_26.png)
 - Early vs Late Prototyping
 - Four main concepts:
     - Representation
@@ -1306,7 +1295,7 @@ e.g. new grade book tool
 - Hold something in your hand to see how it feels or works in the real world in different contexts
 
 ## Exercise: Prototyping Pros and cons
-![img_14.png](./image/img_14.png)
+![img_27.png](./image/img_27.png)
 
 ## Design Life Cycle Revisited
 - We go around the design life cycle multiple times

@@ -52,7 +52,7 @@ Work on additional participation credit opportunities (1.5)
   - Direct engagement
     - If we're moving files, we want to see the files moving
     - In game, we should directly control our avatar
-    - Diret manipulation is a powerful tool to shorten the distance
+    - Direct manipulation is a powerful tool to shorten the distance
 
 ![img.png](./image/img.png)
 
@@ -670,7 +670,6 @@ Work on additional participation credit opportunities (1.5)
 ![img.png](./image/img_12.png)
 - Personas are more personal
 - User model are more objective, give measureable and comparable view of the user
-- 
 
 ## Exercise: Design Alternatives Pros and Cons
 ![img_1.png](./image/img_13.png)
