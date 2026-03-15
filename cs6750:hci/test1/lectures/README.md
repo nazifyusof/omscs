@@ -238,7 +238,7 @@ Participant
 - Cons: Requires real, functional interfaces
 - Cons: Subject to uncontrollable variables
 
-![img_3.png](./image/img_3.png)
+----> **See Appendix: Image 3**
 
 ## User experience: Sans Design
 - UX goes beyond task via interface
@@ -309,7 +309,7 @@ Example: Thermostat
     - Dragging stuff around, making things large
 
 ## Norman's Feedback Cycle Stage
-![img_4.png](./image/img_4.png)
+-----> **See Appendix: Image 6**
 
 Norman ask 7 question when designing these interfaces
 - How easily can one
@@ -356,7 +356,8 @@ Norman ask 7 question when designing these interfaces
         - If we're moving files, we want to see the files moving
         - In game, we should directly control our avatar
         - Direct manipulation is a powerful tool to shorten the distance
-![img_5.png](./image/img_5.png)
+
+-----> **See Appendix: Image 6**
 
 ## Exploring HCI: Direct Manipulation and VR
 - Able to view what they deign in 3d
@@ -447,7 +448,8 @@ Norman ask 7 question when designing these interfaces
 - Can't filter out touch feedback, but unlike listening, it is only available to the person touching
 
 ## Memory
-![img_6.png](./image/img_6.png)
+
+-----> **See Appendix: Image 6**
 
 ## Memory: perceptual store
 - Working memory, very short term, few seconds
@@ -478,7 +480,8 @@ Norman ask 7 question when designing these interfaces
 - E.x. remembering flash cards, formulas, vocab
 
 ## Cognition
-![img_8.png](./image/img_8.png)
+
+-----> **See Appendix: Image 8**
 
 ## Cognition: Learning
 - Procedural learning: how to do something
@@ -538,7 +541,8 @@ Norman ask 7 question when designing these interfaces
     - Larry Constantine's and Lucy Lockwood's 6 principles
     - Ronald Mace's 7 principles of universal design
 - In our case, we learn about 15
-  ![img_10.png](./image/img_10.png)
+
+  -----> **See Appendix: Image 10**
 
 ## Discoverability
 - Norman: Is it possible to even figure out what actions are possible and how to perform them
@@ -769,7 +773,8 @@ e.g. new grade book tool
 - Mixed method: mixture of qualitative and quantitative data to paint a more complete picture of the results
 
 ## Types of Quantitative Data
-![img_17.png](./image/img_17.png)
+
+-----> **See Appendix: Image 17**
 
 - Nominal
     - Categorical data
@@ -1050,10 +1055,12 @@ e.g. new grade book tool
 - Data logs  of user interactions
 
 ## Exercise: Needfinding Pros and Cons
-![img_18.png](./image/img_18.png)
+
+-----> **See Appendix: Image 18**
 
 ## Iterative Needfinding
-![img_19.png](./image/img_19.png)
+
+-----> **See Appendix: Image 19**
 - Needfinding is not one-and-done
 - We need to revisit it throughout the design process, like design life-cycle
 
@@ -1193,13 +1200,15 @@ e.g. new grade book tool
 - Storyboard: could be a video mock up
 
 ##  User Modelling
-![img_21.png](./image/img_21.png)
+
+-----> **See Appendix: Image 21**
 - Personas are more personal
 - User model are more objective, give measureable and comparable view of the user
 -
 
 ## Exercise: Design Alternatives Pros and Cons
-![img_22.png](./image/img_22.png)
+
+-----> **See Appendix: Image 22**
 
 ## Exploring Ideas
 - Some case scenario by dr joyner
@@ -1212,10 +1221,11 @@ e.g. new grade book tool
 - Want to get feedback and get more complex over time
 
 ##  Basics of Prototyping
-![img_23.png](./image/img_23.png)
-![img_24.png](./image/img_24.png)
-![img_25.png](./image/img_25.png)
-![img_26.png](./image/img_26.png)
+
+-----> **See Appendix: Image 23**
+-----> **See Appendix: Image 24**
+-----> **See Appendix: Image 25**
+-----> **See Appendix: Image 26**
 - Early vs Late Prototyping
 - Four main concepts:
     - Representation
@@ -1296,7 +1306,8 @@ e.g. new grade book tool
 - Hold something in your hand to see how it feels or works in the real world in different contexts
 
 ## Exercise: Prototyping Pros and cons
-![img_27.png](./image/img_27.png)
+
+-----> **See Appendix: Image 27**
 
 ## Design Life Cycle Revisited
 - We go around the design life cycle multiple times
@@ -1312,3 +1323,53 @@ e.g. new grade book tool
 - Need to get creative with prototyping
 - Gesture or voice interface, we can use Wizard of Oz
 - AR? Need to get creative
+
+# Appendix
+## Image 3
+![img_3.png](./image/img_3.png)
+
+## Image 4
+![img_4.png](./image/img_4.png)
+
+## Image 5
+![img_5.png](./image/img_5.png)
+
+## Image 6
+![img_6.png](./image/img_6.png)
+
+## Image 8
+![img_8.png](./image/img_8.png)
+
+## Image 10
+![img_10.png](./image/img_10.png)
+
+## Image 17
+![img_17.png](./image/img_17.png)
+
+## Image 18
+![img_18.png](./image/img_18.png)
+
+## Image 19
+![img_19.png](./image/img_19.png)
+
+## Image 21
+![img_21.png](./image/img_21.png)
+
+## Image 22
+![img_22.png](./image/img_22.png)
+
+## Image 23
+![img_23.png](./image/img_23.png)
+
+## Image 24
+![img_24.png](./image/img_24.png)
+
+## Image 25
+![img_25.png](./image/img_25.png)
+
+## Image 26
+![img_26.png](./image/img_26.png)
+
+## Image 27
+![img_27.png](./image/img_27.png)
+
