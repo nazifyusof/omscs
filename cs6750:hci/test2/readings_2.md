@@ -1066,6 +1066,262 @@ Fuel quantity panel (gross weight)
 
 ---
 
+# Studying Context: A Comparison of Activity Theory, Situated Action Models, and Distributed Cognition
+**Chapter 4 — Bonnie A. Nardi**
+
+---
+
+## Overview
+
+> The unaided individual divorced from a social group and from supporting artifacts is no longer the model user.
+
+- Central question: What is context, and how should we study it for HCI/technology design?
+- Three frameworks compared:
+  1. **Activity Theory (AT)**
+  2. **Situated Action Models (SA)**
+  3. **Distributed Cognition (DC)**
+- Nardi argues AT is the richest overall framework, while recognising value in all three.
+
+---
+
+## Situated Action Models
+
+### Core Idea
+- Focus on the **emergent, contingent, improvisatory** nature of human activity
+- Activity grows directly out of the particularities of a given situation
+- Reaction against AI/cognitive science overemphasis on rigid plans and rational problem-solving
+
+### Unit of Analysis
+> "The activity of persons-acting in setting" — Lave (1988)
+
+- Not the individual, not the environment — but the **relation** between the two
+- **Arena**: stable institutional framework (e.g., a supermarket)
+- **Setting**: the arena as personally experienced/edited by the individual
+
+### Key Claims
+- Activity is **not pre-structured**; structure only emerges moment-by-moment
+- Goals and plans are **retrospective reconstructions** (Suchman 1987) — post hoc rationalisations
+- Lave: goals are "constructed, often in verbal interpretation" — they are *retrospective and reflexive*
+
+### Classic Examples
+- *Cottage cheese story* (Lave): dieter improvises a measurement solution on the spot — one-time, personal, situational
+- Suchman's copier experiment: novices figuring out double-sided copying
+- Airport baggage-handling form use
+
+### Research Methods
+- Stationary video cameras, shadowing, artifact tracing, event-based analysis
+- **No interviews** — verbal reports seen as unreliable rationalisations
+- Focus on observable, recordable behaviour
+
+### Strengths
+- Corrects overly rationalistic cognitive science models
+- Highlights flexibility, opportunism, real behaviour in real situations
+
+### Weaknesses
+- Poor fit for **durable, persistent structures** that span situations
+- Difficult to **generalise or compare** across contexts
+- Downplays consciousness, intentionality, motive, prior knowledge
+- Analysis level (moment-by-moment) too low for comparative HCI work
+- Somewhat **behaviouristic**: actor reacts to situation rather than proactively generating activity
+
+---
+
+## Activity Theory
+
+### Origins
+- Developed in the Soviet Union from the 1920s
+- Key theorists: Vygotsky, Leont'ev, Luria
+
+### Unit of Analysis
+- The **activity** itself
+
+### Core Structure of an Activity (Leont'ev)
+
+| Component | Description |
+|-----------|-------------|
+| **Subject** | Person or group engaged in the activity |
+| **Object** | The objective/motive — directs and motivates activity ("objectified motive") |
+| **Actions** | Goal-directed, conscious processes undertaken to fulfil the object |
+| **Operations** | Routinised, unconscious executions of actions (e.g., gear-shifting after driving becomes automatic) |
+
+### Key Concepts
+
+#### Objects
+- Precede and motivate activity
+- Distinguish one activity from another
+- Can transform over time, but not moment-by-moment
+- Example: detective's vision for a system that could handle a "Palme case"
+
+#### Actions → Operations (Dynamic Levels)
+- Actions become **operations** through habituation (e.g., gear-shifting)
+- Operations become **actions** again when conditions impede (e.g., mail program breaks — must consciously use new commands)
+- All levels can move **up and down** dynamically
+
+#### Mediation by Artifacts
+> "A tool mediates activity that connects a person not only with the world of objects, but also with other people." — Leont'ev
+
+- Artifacts (instruments, signs, language, machines) mediate human activity
+- Artifacts carry culture and history; persist across time and space
+- Reframe: "computer-mediated activity" rather than "human-computer interaction"
+
+#### Context in AT
+- **The activity itself is the context** — not an outer container
+- Context is both **internal** (objects, goals) and **external** (artifacts, people, settings)
+- Internal and external are **unified**, not separate
+- Example: Rostropovich and his cello — inextricably intertwined (Zinchenko)
+
+### People vs. Things
+- People and artifacts are **asymmetrical** — artifacts mediate, they do not cognise
+- Humans have motive and consciousness; machines do not
+- Leads to more humane, responsible technology design
+- Critiques Fitts's Law (Bertelsen): treating the human as a "channel" reduces design to "economical optimisation"
+
+### Strengths
+- Rich conceptual vocabulary for comparison and generalisation
+- Accounts for consciousness, intentionality, history, and durable structures
+- Interview data is valid — people *can* articulate goals and actions (though not always operations)
+- Longer time horizons supported
+- Subjective experience of users is central
+
+---
+
+## Distributed Cognition
+
+### Core Idea
+> "A new branch of cognitive science devoted to the study of: the representation of knowledge both inside the heads of individuals and in the world..." — Flor & Hutchins (1991)
+
+### Unit of Analysis
+- A **cognitive system** composed of individuals and the artifacts they use
+- Goal is at the **systems level**, not the individual level
+
+### Key Example
+- The **cockpit system**: pilots + instruments = one cognitive system; success = "completion of a flight"
+- Ship navigation (Hutchins 1994)
+
+### Emphasis
+- **Representations** — internal and external — and the transformations they undergo
+- **Coordination** among individuals and artifacts
+- Detailed analyses of specific artifacts (cockpits, spreadsheets, nomograms, CAD systems)
+- Finds **stable design principles** applicable across design problems
+
+### People vs. Things
+- People and artifacts treated as **conceptually equivalent "agents"** in a system
+- Critiqued by Nardi: artifacts cannot *know* anything — they serve as *media* of knowledge for humans
+- This equivalence "damps out sources of systemic variation and contradiction"
+
+### Strengths
+- Excellent at analysing **persistent structures** and artifacts in depth
+- Generates comparative data on work practices across settings
+- Useful, stable design principles
+
+### Relationship to AT
+> Activity theory and distributed cognition are "very close in spirit" and will likely mutually inform and merge over time — Nardi
+
+- DC lacks AT's engagement with consciousness and individual motive
+- DC uses "functional system" as unit — moving even further from the individual
+
+---
+
+## Key Differences: Comparative Table
+
+| Dimension | Activity Theory | Situated Action | Distributed Cognition |
+|-----------|----------------|-----------------|----------------------|
+| **Unit of analysis** | Activity (subject + object + actions + operations) | Person-acting-in-setting | Cognitive/functional system |
+| **Role of goals/motives** | Central — precede and shape activity | Retrospective rationalisations | Systemic goals (not individual consciousness) |
+| **Persistent structures** | Central (artifacts, history, culture) | Marginal (tension with situatedness) | Central (especially artifacts) |
+| **People vs. things** | Asymmetrical (artifacts mediate) | Asymmetrical (humans qualitatively different) | Symmetrical (both are "agents") |
+| **Consciousness/intentionality** | Core — humans are sentient, motivated beings | Downplayed/rejected | Not central |
+| **Time horizon** | Long-term | Moment-by-moment | Variable |
+| **Comparability** | Strong | Weak | Moderate–strong |
+| **Interview data** | Valid and valued | Distrusted | Used in some studies |
+
+---
+
+## The Structuring of Activity
+
+### Activity Theory & Distributed Cognition
+- Activity is shaped **before** it unfolds by an object/system goal
+- Object partially determines activity
+- Explains *why* different people in the same "situation" behave differently
+
+### Situated Action
+- Activity is shaped **only as it unfolds** — in situ
+- Goals and plans are post hoc
+- Cannot distinguish one activity from another by reference to motive
+
+### Nardi's Nature Walk Example
+- Bird watcher, entomologist, meteorologist — same environment, radically different behaviour
+- Difference is the **subject's object**, not the situation
+- Situated action cannot account for this without recourse to intentionality it rejects
+
+---
+
+## Persistent Structures
+
+### Activity Theory
+- Artifacts carry culture and history; stretch across activities through time and space
+- Vygotsky/Leont'ev: tool use connects person to "the experience of humanity"
+
+### Distributed Cognition
+- Most thorough treatment of persistent artifact analysis
+- Studies: cockpit devices, spreadsheets, CAD systems, door handles (Norman 1988)
+- Properties of artifacts seen as persisting across situations
+
+### Situated Action
+- Tension between emphasis on emergence vs. acknowledgment of "routine practices"
+- Routines introduced but not well theorised
+- Routines imply mental representations — "a chink in the situated armor"
+
+---
+
+## Methodological Implications of Activity Theory
+
+> Four key implications for HCI research:
+
+### 1. Long Research Time Frame
+- Sufficient to understand users' **objects** and how they change over time
+- Activities are "longer-term formations" (Kuutti)
+
+### 2. Broad Patterns over Episodic Fragments
+- Look for overall direction and import of an activity
+- Smaller episodes useful only within broader context
+
+### 3. Varied Data Collection
+- Interviews + observations + video + historical materials
+- No over-reliance on any single method (e.g., video alone)
+
+### 4. Users' Point of View
+- Commitment to understanding from the native's perspective
+- Essential for practical technology introduction (Bellamy on classroom technology)
+
+---
+
+## Conclusion
+
+> "Activity theory seems the richest framework for studies of context in its comprehensiveness and engagement with difficult issues of consciousness, intentionality, and history." — Nardi
+
+- All three frameworks have value and will mutually inform each other
+- Ideal synthesis: **AT as backbone** + DC's focus on representations + SA's commitment to real activity in flux
+- HCI still far from Brooks's (1991) ideal corpus: comparative, high-level, design-generative knowledge
+- Design is a practical activity — it will proceed regardless; researchers must provide nuanced, generalisable findings
+
+---
+
+## Key Theorists & Works to Know
+
+| Theorist | Contribution |
+|----------|-------------|
+| Leont'ev (1974, 1978) | Activity theory: subject, object, actions, operations |
+| Vygotsky (1978) | Mediation, tools, zone of proximal development |
+| Suchman (1987) | *Plans and Situated Actions*; plans as retrospective reconstructions |
+| Lave (1988) | *Cognition in Practice*; person-acting-in-setting; cottage cheese example |
+| Flor & Hutchins (1991) | Distributed cognition definition; programmer coordination study |
+| Hutchins (1991a, 1994) | Cockpit cognition; *Cognition in the Wild* |
+| Norman (1988) | *Psychology of Everyday Things*; artifact design principles |
+| Brooks (1991) | Ideal for HCI: comparative, high-level, design-suggestive knowledge |
+
+---
+
 # 2.9
 
 # Study Notes: "The Industrial Revolution in the Home"
