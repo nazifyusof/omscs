@@ -1,3 +1,19 @@
+# HCI (Completed Spring 26)
+
+# My Summary
+    In this course, I learned about the principles and methods of Human–Computer Interaction. I explored the design lifecycle, including needfinding, design alternatives, prototyping, and evaluation.
+    
+    Throughout each stage, I learned various HCI principles and methods that can be applied to design effective interactions between humans and computers. 
+    I also completed two projects to apply the concepts learned in class.
+    
+    The first project was an individual project in which I redesigned the university’s password reset page. 
+    The second project was a group project where we designed an application to help people with diabetes manage their condition. 
+    In both projects, I applied the principles and methods learned in class by conducting needfinding, gathering user feedback, designing alternatives, prototyping, and evaluating the designs both qualitatively and quantitatively. For each project, we went through two iterations of the design process.
+    
+    Overall, I found this course very interesting and useful. I gained new insights into how to design effective interactions for everyday objects, such as doors. 
+    It was interesting to learn how humans’ mental models can differ from the actual design of a door, and how designers can improve designs to better align with users’ mental models. 
+    As someone who was not previously familiar with UX design, I found this course very valuable in learning the principles and methods of HCI.
+
 # Learning Goals
 - Understand common principles in HCI
 - understand design lifecycle, role of iteration in the process
@@ -24,7 +40,7 @@
 - Learn by reflections - we are not our own user! Use some strategies to get out from out comfort zone
 
 
-- Peer learing, collaborative learning, learning by teaching, communities of practice
+- Peer learning, collaborative learning, learning by teaching, communities of practice
 - Project-based learning, to explore the principles and methods of HCI
 
 # Learning Assessments
@@ -46,3 +62,4 @@ Tips:
 - Participate in class
 - Select an application area to explore, pick area that interest us
 - Leave behind what we know, be cautious about designing to narrowly based only on our EXPERIENCES
+
