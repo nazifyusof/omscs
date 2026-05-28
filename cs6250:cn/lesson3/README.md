@@ -19,13 +19,13 @@
 * Poison reverse
 * Hot-potato routing
 
-## 
+## Routing Algorithms (RA)
 
-## 
+## RA: Link-state Routing Algorithm
 
-## 
+## RA: Distance Vector Routing
 
-## 
+## RA: Hot Potato Routing
 
 ## 
 
