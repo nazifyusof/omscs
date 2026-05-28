@@ -1,16 +1,6 @@
-# Content
+# Lesson x
 
-
-# Assignments
-
-
-# Readings
-
-
-# Miscellany
-
-
-# 
+## Intro
 
 ## 
 

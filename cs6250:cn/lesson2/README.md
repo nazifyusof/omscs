@@ -7,6 +7,18 @@ Two most common transport protocols are:
 1. TCP 
 2. UDP
 
+## Key concepts:
+* The role of the transport layer above IP
+* Application-to-application communication
+* UDP versus TCP
+* Multiplexing and demultiplexing with ports and sockets
+* TCP connection establishment and teardown
+* Reliable delivery, sequence numbers, ACKs, and retransmissions
+* Fast retransmit and duplicate ACKs
+* Flow control and the receive window
+* Congestion control and the congestion window
+* Slow start, congestion avoidance, AIMD, and TCP CUBIC
+
 ## Segment
 - The sockets are identified based on special fields (shown below) in the segment such as the source port number field and the destination port number field.
 ![img.png](image/img.png)
