@@ -1,4 +1,4 @@
-# Lesson 3: Intra-domain routing
+# Lesson 4: Intra-domain routing
 
 ## Intro
 
