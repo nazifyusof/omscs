@@ -346,8 +346,7 @@ Round-robin scheduling introduces fairness by alternating between flows, but req
 
 ## Traffic Scheduling: Leaky Bucket
 - Traffic policing and shaping both limit the output rate of a link but respond to violations differently — policing drops excess traffic while shaping delays it.
-![img_19.png](image/img_19.png)
-![img_20.png](image/img_20.png)
+- ![img_19.png](image/img_19.png)
 
 ### Policing vs Shaping
 - Policer:
@@ -360,6 +359,8 @@ Round-robin scheduling introduces fairness by alternating between flows, but req
 - Both mechanisms can work in tandem
 
 ### Leaky Bucket Algorithm
+![img_20.png](image/img_20.png)
+
 - Analogy: water flows into a leaky bucket at any rate, but leaks out at a **constant rate**
 - Bucket capacity **b** represents a buffer holding packets; incoming packets correspond to water
 - Leak rate **r** = constant rate at which packets are allowed into the network, regardless of arrival rate
