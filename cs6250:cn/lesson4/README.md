@@ -2,6 +2,8 @@
 
 ## Intro
 
+---
+
 ## Key concepts:
 * Autonomous Systems and interdomain routing
 * Intra-domain routing versus interdomain routing
@@ -14,6 +16,8 @@
 * BGP updates, withdrawals, and instability
 * Internet Exchange Points and route servers
 * Route filtering, misconfiguration, and operational risks
+
+---
 
 ## Autonomous Systems and Internet Interconnection
 - The basis of internet ecosystem includes Internet Service Providers (ISPs), Internet Exchange Points (IXPs), and Content Delivery Networks (CDNs).
@@ -48,6 +52,8 @@
   - In contrast, the Interior Gateway Protocols (IGPs) operate within an AS, and they are focused on "optimizing a path metric" within that network
   - Example IGPs include Open Shortest Paths First (OSPF), Intermediate System - Intermediate System (IS-IS), Routing Information Protocol (RIP), and E-IGRP
 
+---
+
 ## AS Business Relationships
 ![img_2.png](image/img_2.png)
 - Forms of business relationships between ASes
@@ -67,6 +73,8 @@
 While peering allows networks to have their traffic forwarded without cost, provider ASes have a financial incentive to forward as much of their customers' traffic as possible. One major factor determining a provider's revenue is the data rate of an interconnection
 - Based on a fixed price, given that the bandwidth used is within a predefined range
 - Based on the bandwidth used. The bandwidth usage is calculated based on periodic measurements, e.g., five-minute intervals. The provider then charges by taking the 95th percentile of the distribution of the measurements.
+
+---
 
 ## BGP Routing Policies: Importing and Exporting Routes
 ![img_3.png](image/img_3.png)
@@ -96,7 +104,7 @@ While peering allows networks to have their traffic forwarded without cost, prov
   - An AS uses routes learned from peers since these are usually "free" (under the peering agreement).
   - An AS resorts to importing routes learned from providers only when necessary for connectivity since these will add to costs.
 
-
+---
 
 ## BGP and Design Goals
 - Design goals of BGP
@@ -109,7 +117,8 @@ While peering allows networks to have their traffic forwarded without cost, prov
     - Each AS can still make local decisions (which routes to import and export) while keeping these decisions confidential from other ASes.
   - Security
     - There have been several efforts to enhance BGP security ranging from protocols (e.g., S-BGP), additional infrastructure (e.g., registries to maintain up-to-date information about which ASes own which prefixes ASes), public keys for ASes, etc. Also, there has been extensive research to develop machine learning-based approaches and systems
-    - 
+
+---
 
 ## BGP Protocol Basics
 ![img_4.png](image/img_4.png)
@@ -149,6 +158,8 @@ While peering allows networks to have their traffic forwarded without cost, prov
         - Internal routers use it to store the IP address of the border router
         - If multiple border routers advertise a path to the same destination, NEXT-HOP allows the internal router to store the best path in the forwarding table
 
+---
+
 ## iBGP and eBGP
 - Two flavors
   - eBGP - session between routers in two different ASes
@@ -163,6 +174,8 @@ While peering allows networks to have their traffic forwarded without cost, prov
 - Note that iBGP is not another IGP-like protocol (e.g., RIP or OSPF)
 - IGP-like protocols are used to establish paths between the internal routers of an AS based on specific costs within the AS.
 - In contrast, iBGP is only used to disseminate external routes within the AS
+
+---
 
 ## BGP Decision Process: Selecting Routes at a Router
 - A router receives incoming BGP messages and processes them
@@ -209,6 +222,7 @@ While peering allows networks to have their traffic forwarded without cost, prov
 - **By the neighboring AS** - e.g., MED
 - **By the protocol** - e.g., whether a route is learned via eBGP or iBGP
 
+---
 
 ## Challenges with BGP: Scalability and Misconfigurations
 - BGP can suffer from two significant limitations: **misconfigurations** and **faults**
@@ -233,6 +247,8 @@ While peering allows networks to have their traffic forwarded without cost, prov
 - Because this can affect reachability, ASes can be strategic about thresholds
     - More specific prefixes can be more aggressively suppressed (lower thresholds)
     - Routes to known destinations requiring high availability can be allowed higher thresholds
+
+---
 
 ## Peering at IXPs
 ![img_11.png](image/img_11.png)
@@ -273,6 +289,7 @@ While peering allows networks to have their traffic forwarded without cost, prov
 - **DDoS blackholing** - customer-triggered blackholing to alleviate DDoS attacks
 - **Free value-added services** - e.g., IRR, DNS root name servers, NTP (offered by some IXPs such as Netnod)
 
+---
 
 ## Peering at IXPs: How Does a Route Server Work?
 - Two ASes normally exchange traffic using a **bilateral BGP session** (two-way BGP session)
@@ -299,6 +316,8 @@ While peering allows networks to have their traffic forwarded without cost, prov
 3. RS applies the **export filter** to check if AS X allows AS Z to receive p1 → if true, p1 is added to the AS Z-specific RIB
 4. RS advertises p1 to AS Z with **AS X as the next hop**
 
+---
+
 ## Optional Reading: Remote Peering
 ![img_14.png](image/img_14.png)
 ### What is Remote Peering?
@@ -317,6 +336,8 @@ While peering allows networks to have their traffic forwarded without cost, prov
 2. **Colocation information** - an AS must be physically present in at least one colocation facility where the IXP has deployed switching equipment; locating where both AS and IXP are colocated can help infer local vs. remote
 3. **Multi-IXP router inference** - if a router is connected to multiple IXPs and is inferred as local or remote to one, the inference can be extended to the other IXPs based on whether they share colocation facilities
 4. **Private connectivity with multiple existing AS participants** - if an AS has private peers over the same router connecting it to an IXP, and those private peers are physically colocated at the same IXP facilities, the AS can be inferred as local to the IXP
+
+---
 
 ## Optional Reading: BGP Configuration Verification
 - BGP configuration is complex and easily misconfigured at both the eBGP and iBGP levels
@@ -351,6 +372,7 @@ While peering allows networks to have their traffic forwarded without cost, prov
     - Unorthodox AS prepending practices
     - iBGP sessions with "next-hop self"
 
+---
 
 ## Quizzes
 - Q1: The internet topology has been evolving from a _________ structure into a _________ structure. 

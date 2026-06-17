@@ -2,6 +2,8 @@
 
 ## Intro
 
+---
+
 ## Key concepts:
 * Router architecture and packet-processing pipeline
 * Control plane versus data plane
@@ -15,6 +17,8 @@
 * Packet classification and quality of service
 * Traffic policing and traffic shaping
 * Token bucket and leaky bucket mechanisms
+
+---
 
 ## Why We Need Packet Classification?
 - An extension beyond destination-based forwarding — packets are handled based on multiple criteria (e.g., TCP flags, source addresses) to support quality-of-service and security guarantees.
@@ -47,6 +51,8 @@
     - Drop all traffic from S2 (e.g., S2 is an experimental site)
     - Reserve 50 Mbps for traffic from prefix X to prefix Y (resource reservation)
 
+---
+
 ## Packet Classification: Simple Solutions
 ### Simple Approaches
 
@@ -70,6 +76,8 @@
     - DiffServ follows a similar approach:
         - Packet classification is applied at the **edges**
         - Packets are marked for special quality-of-service treatment
+
+---
 
 ## Fast Searching Using Set-Pruning Tries
 - Let's assume that we have a two-dimensional rule. For example, we want to classify packets using both the source and the destination IP addresses. 
@@ -101,6 +109,8 @@
     - As the number of rules grows, the same source prefixes are duplicated across many destination tries
     - This leads to significant memory overhead
 
+---
+
 ## Reducing Memory Using Backtracking
 - The opposite trade-off to set-pruning tries — pays in lookup time to reduce memory usage by storing each rule exactly once.
 
@@ -119,6 +129,8 @@
 - Lookup cost: backtracking through ancestor source tries is **slower** than set-pruning
     - Set-pruning reduces time at the cost of memory
     - Backtracking reduces memory at the cost of time
+
+---
 
 ## Grid of Tries
 - Improves on backtracking by precomputing **switch pointers** that skip directly to the next relevant source trie, avoiding redundant backtracking.
@@ -144,6 +156,8 @@
 - Time: faster than backtracking — switch pointers eliminate the need to manually traverse ancestor source tries
 ![img_3.png](image/img_3.png)
 ![img_4.png](image/img_4.png)
+
+---
 
 ## Scheduling and Head of Line Blocking
 - Scheduling determines how an N×N crossbar switch connects input lines to output lines, maximizing parallel communication while ensuring each input connects to at most one output at a time.
@@ -188,9 +202,10 @@
 - This problem is called **head-of-line (HOL) blocking**
 - Empty slots in the timeline indicate no packet was sent at that time
 
+---
+
 ## Avoiding Head of Line Blocking
 - HOL blocking can be avoided either by using output queuing (so packets never wait at input) or by parallel iterative matching (so virtual queues make progress even when the head is blocked).
-
 
 ### Approach 1: Output Queuing (Knockout Scheme)
 
@@ -227,6 +242,8 @@
 - All traffic is sent in **four cell times** — more efficient than take-a-ticket
     - Fourth cell time is sparsely used and could carry additional traffic
 
+---
+
 ## Scheduling Introduction
 - Routers rely on real-time scheduling to handle routing updates, management queries, and data packets — with increasing link speeds (over 40 Gbps), scheduling decisions must be made within minimum inter-packet times.
 
@@ -260,9 +277,10 @@
     - Guarantee a **maximum delay** through a router for a flow
     - Especially critical for video — without bounded delays, live video streaming degrades significantly
 
+---
+
 ## Deficit Round Robin
 Round-robin scheduling introduces fairness by alternating between flows, but requires refinements to handle variable packet sizes and complexity at high speeds.
-
 
 ### Problem with Simple Round Robin
 
@@ -320,6 +338,8 @@ Round-robin scheduling introduces fairness by alternating between flows, but req
     - F1: D1 + Q1 = 800 → sufficient to send second and third packets
     - No remaining packets → D1 reset to 0 (not 30, the actual remainder)
 
+---
+
 ## Traffic Scheduling: Token Bucket
 - Token bucket shaping limits the burstiness of a flow by enforcing both an average rate and a maximum burst size, without requiring flows to be placed in separate queues.
 
@@ -343,6 +363,8 @@ Round-robin scheduling introduces fairness by alternating between flows, but req
 ### Token Bucket Policing
 - A modified version of token bucket shaping that maintains a **single queue**
 - Key difference: if a packet arrives and there are **no tokens in the bucket**, the packet is **dropped immediately** rather than waiting
+
+---
 
 ## Traffic Scheduling: Leaky Bucket
 - Traffic policing and shaping both limit the output rate of a link but respond to violations differently — policing drops excess traffic while shaping delays it.

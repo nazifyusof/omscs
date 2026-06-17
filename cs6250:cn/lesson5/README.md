@@ -2,6 +2,8 @@
 
 ## Intro
 
+---
+
 ## Key concepts:
 * Router architecture and packet-processing pipeline
 * Control plane versus data plane
@@ -15,6 +17,8 @@
 * Packet classification and quality of service
 * Traffic policing and traffic shaping
 * Token bucket and leaky bucket mechanisms
+
+---
 
 ## What's Inside a Router?
 ![img.png](image/img.png)
@@ -38,6 +42,8 @@
 - **control plane functions**: Implementing the routing protocols, maintaining the routing tables, computing the forwarding table
   - All these functions are implemented in software in the routing processor, or as we will see in the SDN chapter, these functions could be implemented by a remote controller
 ![img_2.png](image/img_2.png)
+
+---
 
 ## Router Architecture
 - Main task: to switch a packet from an input link to the appropriate output link based on the destination address. Input and output links are logically separate but are often physically combined.
@@ -75,6 +81,8 @@ These operations are still essential but are not on the critical forwarding path
     - **TCP and UDP** — used for remote communication with the router
     - **Internet Control Message Protocol (ICMP)** — sends error messages (e.g., when TTL is exceeded)
 
+---
+
 ## Different Types of Switching
 - The switching fabric is the brain of the router, as it performs the main task to switch (or forward) the packets from an input port to an outport port.
 
@@ -102,6 +110,8 @@ There are three main ways the switching fabric can forward packets.
     - Can carry multiple packets simultaneously, as long as they use different input and output ports
         - e.g., packets can travel A→Y and B→X at the same time
 ![img_6.png](image/img_6.png)
+
+---
 
 ## The Challenges Routers Face
 - Routers face fundamental challenges around bandwidth/internet population scaling and delivering services at high speeds.
@@ -133,6 +143,8 @@ There are three main ways the switching fabric can forward packets.
 - Bottlenecks about Services:
   - Providing performance guarantees (QoS) at high speeds is nontrivial
   - Supporting new services such as measurements and security guarantees adds further complexity
+
+---
 
 ## Prefix-Match Lookups
 - Routers group multiple IP addresses by the same prefix to address the scalability problem caused by the continuous growth of networks and IP addresses on the Internet.
@@ -182,6 +194,8 @@ There are three ways to denote a prefix.
 
 ![img_8.png](image/img_8.png)
 
+---
+
 ## Uni-bit Tries
 - One of the simplest prefix lookup techniques — builds a binary trie where each node has a 0-pointer and a 1-pointer, and prefixes are stored along paths from the root.
 
@@ -216,6 +230,8 @@ There are three ways to denote a prefix.
     - For efficiency, consecutive one-way branch nodes are **compressed into a single node** storing the bit string
     - Example: P9 is represented as a compressed 2-bit node
 
+---
+
 ## Multi-bit Tries
 - An alternative to unibit tries that checks multiple bits at each step (called a **stride**) to reduce memory accesses during lookup.
 
@@ -232,6 +248,8 @@ There are three ways to denote a prefix.
 - Two flavors of multibit tries:
     - Fixed-length stride tries
     - Variable-length stride tries
+
+---
 
 ## Prefix Expansion
 - To use fixed-length strides, prefixes must be expanded so their lengths are multiples of the chosen stride — a process called **controlled prefix expansion**.
@@ -255,6 +273,8 @@ There are three ways to denote a prefix.
 - A collision occurs when an expanded prefix matches an existing prefix in the database
 - The expanded prefix is **dropped** in favour of the existing one
 - Example: the fourth expansion of P6 = `1000*` collides with P7 and is removed
+
+---
 
 ## Multi-bit tries: Fixed-Stride
 - A multibit trie where every node stores 3 bits, allowing the lookup to advance 3 bits at a time through the prefix database.
@@ -282,6 +302,8 @@ There are three ways to denote a prefix.
 ### Prefixes in the Expanded Trie
 - All prefixes from the expanded database are represented: P1, P2, P3, P5, P6, P7, P8, and P9
 
+---
+
 ## Multi-bit Tries: Variable Stride
 - A more flexible multibit trie scheme where each node can examine a different number of bits, optimizing for memory usage and fewer memory accesses.
 
@@ -302,6 +324,8 @@ There are three ways to denote a prefix.
     - Reduced trie memory
     - Fewer memory accesses per lookup
 - The optimum variable stride per node is selected using **dynamic programming**
+
+---
 
 ## Quiz
 

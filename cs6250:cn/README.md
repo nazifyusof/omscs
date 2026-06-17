@@ -8,6 +8,8 @@
 5. BGP Measurements project. (Focuses Internet Measurement / Control Plane)
 6. Extra Credit Project: Demo.
 
+---
+
 ## Learning Objectives
 
 1. **Internet Architecture** — Explain the architecture and evolution of the Internet, including the Internet protocol stack, and the design choices that allow the Internet to scale.

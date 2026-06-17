@@ -7,6 +7,8 @@ Two most common transport protocols are:
 1. TCP 
 2. UDP
 
+---
+
 ## Key concepts:
 * The role of the transport layer above IP
 * Application-to-application communication
@@ -19,9 +21,13 @@ Two most common transport protocols are:
 * Congestion control and the congestion window
 * Slow start, congestion avoidance, AIMD, and TCP CUBIC
 
+---
+
 ## Segment
 - The sockets are identified based on special fields (shown below) in the segment such as the source port number field and the destination port number field.
 ![img.png](image/img.png)
+
+---
 
 ## Multiplexing
 - Ability for a host to run multiple applications to use the network simultaneously.
@@ -31,8 +37,12 @@ Two most common transport protocols are:
   - Connectionless
   - Connection-oriented
 
+---
+
 ## De-multiplexing
 - The job of delivering the data included in the transport-layer segment to the appropriate socket, as defined in the segment fields,
+
+---
 
 ## Connectionless Multiplexing and De-multiplexing
 - The identifier of a UDP socket is a **two-tuple** that consists of a destination IP address and a destination port number.
@@ -41,6 +51,8 @@ Two most common transport protocols are:
 
 ![img_1.png](image/img_1.png)
 
+
+---
 
 ## Connection-oriented Multiplexing and De-multiplexing
 - The identifier for a TCP socket is a **four-tuple** that consists of the source IP, source port, destination IP, and destination port.
@@ -57,6 +69,8 @@ Two most common transport protocols are:
 - The client and the server may be using persistent HTTP sessions, in which case they exchange HTTP messages via the same server socket.
 - The client and the server may be using a non-persistent HTTP session, where for every request and response, a new TCP connection and a new socket are created and closed for every response/request. 
   - A busy web server may experience severe performance impact.
+
+---
 
 ## UDP Protocol
 - UDP is an unreliable protocol that lacks the mechanisms that TCP has. It is a **connectionless** protocol that does not require the establishment of a connection (e.g., the three-way handshake) before sending packets.
@@ -78,6 +92,8 @@ Two most common transport protocols are:
   - Checksum (an error checking mechanism): provides a basic error checking since there is no guarantee for link-by-link reliability. **The UDP sender adds the bits of the source port, the destination port, the packet length and the application data**. It performs a 1's complement on the sum (all 0s are turned to 1 and all 1s are turned to 0s), which is the value of the checksum. The receiver adds all the four 16-bit words (including the checksum). The result should be all 1's unless an error has occurred
 ![img_5.png](image/img_5.png)
 
+---
+
 ## The TCP Three-Way Handshake
 - Connection Establishment
 1. Step 1: The TCP client sends a special segment (containing no data) with the SYN bit set to 1. The client also generates an initial sequence number (client_isn) and includes it in this special TCP SYN segment.
@@ -93,6 +109,8 @@ Two most common transport protocols are:
 4. Step 4: The client sends an ACK for it to the server. It also waits for sometime to resend this acknowledgment in case the first ACK segment is lost.
 ![img_7.png](image/img_7.png)
 
+
+---
 
 ## Reliable Transmission
 - Network layer is unreliable, and this may lead to packets being lost or arriving out of order. This can be an issue for a lot of applications. For example, a file downloaded over the Internet might become corrupted if some packets become lost during the transfer.
@@ -121,10 +139,14 @@ In addition to using a timeout to detect loss of packets, TCP also uses duplicat
 ![img_9.png](image/img_9.png)
 
 
+---
+
 ## Transmission Control
 - Why control the transmission rate?
 - Where should the transmission control function reside in the network stack?  
   - Turns out that transmission control is a fundamental function for most applications. Therefore implementing it in the transport layer is easier.
+
+---
 
 ## Flow Control
 - Flow control: Controlling the Transmission Rate to Protect the Receiver buffer
@@ -151,6 +173,8 @@ In addition to using a timeout to detect loss of packets, TCP also uses duplicat
   - TCP resolves this problem by making the sender **continue sending segments of size 1** byte even after rwnd = 0. When the receiver acknowledges these segments, it will specify the rwnd value, and the sender will know as soon as the receiver has some room in the buffer.
 
 ![img_10.png](image/img_10.png)
+
+---
 
 ## Congestion Control Introduction
 - Congestion control: Controlling the transmission rate to  protect the network from congestion
@@ -217,7 +241,8 @@ In addition to using a timeout to detect loss of packets, TCP also uses duplicat
     - The second kind of congestion detection is timeout, i.e., when no ACK is received within a specified amount of time. It is considered a more severe form of congestion, and the congestion window is reset to the initial window size.
   - ![img_13.png](image/img_13.png)
   - Lastly, we note that "probing" refers to the fact that a TCP sender increases its transmission rate to probe for the rate at which congestion begins, then backs off from that rate, and then begins probing again to see if the congestion level has changed.
-=
+
+---
 
 ## Slow start in TCP
 - When we have a new connection that starts from a cold start, the sending host can take much longer to increase the congestion window by using AIMD. So for a new connection, we need a mechanism that can rapidly increase the congestion window from a cold start.
@@ -237,6 +262,8 @@ In addition to using a timeout to detect loss of packets, TCP also uses duplicat
   - After this point, **it increases the window by 1** (additive increase) each `RTT` until it experiences packet loss (cliff point). After which, it multiplicatively decreases the window.
 
   
+---
+
 ## TCP Fairness
 - fairness means that for k connections passing through one common link with capacity R bps, each connection gets an average throughput of R/k.
 - Consider a simple scenario where two TCP connections share a single link with bandwidth R. For simplicity, assume that both connections have the same RTT and only TCP segments pass through the link. Suppose we plot a graph for the throughput of these two connections. In that case, the throughput for each should sum up to R. The goal is to get the throughput achieved for each link to fall somewhere near the intersection of the equal bandwidth share line and the full bandwidth utilization line, as shown in the graph below:
@@ -246,6 +273,8 @@ In addition to using a timeout to detect loss of packets, TCP also uses duplicat
 - At point C, the total throughput is again less than R, so both connections will increase their window size to move towards point D and will experience packet loss at D, and so on.
 - Thus, **using AIMD leads to fairness in bandwidth sharing**.
 
+---
+
 ## Caution About Fairness
 - There can be cases when TCP is not fair.
 - Cases:
@@ -253,6 +282,8 @@ In addition to using a timeout to detect loss of packets, TCP also uses duplicat
     - Recall that TCP Reno uses ACK-based adaptation of the congestion window. Thus, connections with smaller RTT values would increase their congestion window faster than those with longer RTT values. This leads to an unequal sharing of the bandwidth.
   - if a single application uses multiple parallel TCP connections.
     - nine applications using one TCP connection sharing a link of rate R. If a new application establishes a connection on the same link and also uses one TCP connection, then each application gets assigned the same transmission rate of R / 10. But, if the new application had 11 parallel TCP connections, it would get an unfair allocation of more than R / 2.
+
+---
 
 ## Congestion Control in Modern Network Environments: TCP CUBIC
 - We can see that TCP Reno has low network utilization, especially when the network bandwidth is high or the delay is large. Such networks are also known as high bandwidth delay product networks.
@@ -273,12 +304,16 @@ In addition to using a timeout to detect loss of packets, TCP also uses duplicat
   - beta = multiplicative decrease factor after loss
 - It is important to note that time here is the time elapsed since the last loss event instead of the usual ACK-based timer used in TCP Reno. This also makes TCP CUBIC RTT-fair.
 
+---
+
 ## The TCP Protocol: TCP Throughput
 - Given this behavior, we want to have a simple model that predicts the throughput for a TCP connection.
 - To make our model more realistic, let's also assume that we have p = the probability loss. So, we assume that the network delivers 1/p consecutive packets, followed by a single packet loss.
 ![img_18.png](image/img_18.png)
 ![img_19.png](image/img_19.png)
 
+
+---
 
 ## Optional Reading: Datacenter TCP
 - At this point, it is essential to know that a lot of research has been going into optimizing the congestion control mechanisms. These optimizations are called for because of the evolution of the networks. We looked at TCP CUBIC as one such example for high bandwidth-delay product networks.
@@ -289,12 +324,16 @@ In addition to using a timeout to detect loss of packets, TCP also uses duplicat
     - This makes changing the transport layer easier since the new algorithms do not need to coexist with the older ones.
 - DCTCP and TIMELY are two popular examples of TCP designed for DC environments. DCTCP is based on a hybrid approach of using both implicit feedback, e.g., packet loss, and explicit feedback from the network using ECN for congestion control. TIMELY uses the gradient of RTT to adjust its window.
 
+---
+
 ## Key words
 - **Segment**: The transport layer on the sending host receives a message from the application layer and appends its own header to create a segment
 - **De-multiplexing**: The process of delivering the data to the correct application on the receiving host. The transport layer on the receiving host uses the port number in the segment header to determine which application to deliver the data to.
 
 
-## Quiz 
+---
+
+## Quiz
 - Q1: As we have seen, UDP and TCP use port numbers to identify the sending application and destination application. Why don’t UDP and TCP just use process IDs rather than define port numbers?
   - A1: Process IDs are specific to operating systems and therefore using process IDs rather than a specially defined port would make the protocol operating system dependent. Also, a single process can set up multiple channels of communications and so using the process ID as the destination identifier wouldn’t be able to properly demultiplex, Finally, having processes listen on well-known ports (like 80 for http) is an important convention. 
 - Q2: UDP and TCP use 1’s complement for their checksums. But why is it that UDP takes the 1’s complement of the sum – why not just use the sum? Exploring this further, using 1’s complement, how does the receiver compute and detect errors? Using 1’s complement, is it possible that a 1-bit error will go undetected? What about a 2-bit error?

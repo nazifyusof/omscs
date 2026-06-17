@@ -17,6 +17,8 @@
 * Poison reverse
 * Hot-potato routing
 
+---
+
 ## Routing Algorithms (RA)
 Overview of how routers cooperate via routing protocols to determine paths for packets within a single administrative domain, covering forwarding vs. routing distinctions and the two major algorithm classes.
 
@@ -60,6 +62,8 @@ The two major categories of intradomain routing algorithms differ in what inform
     - Each router has complete knowledge of the entire network topology and link costs
 - **Distance-vector algorithms**:
     - Each router knows only the costs to its immediate neighbors and exchanges estimates with them iteratively
+
+---
 
 ## RA: Link-state Routing Algorithm
 A link-state routing algorithm where all nodes have full knowledge of network topology and link costs, used to compute the least-cost path from a source node to all other nodes.
@@ -114,6 +118,8 @@ After all iterations complete, the algorithm returns the finalized results.
 - Shortest path **cost** from u to every other node v in the network
 - The **previous-hop node p(v)** for each v, which can be traced back to reconstruct the full path
 
+---
+
 ## Linkstate Routing Algorithm - Example
 A step-by-step trace of Dijkstra's algorithm on a sample graph with source node u, showing how D(v) and N' evolve across each iteration until all least-cost paths are finalized.
 
@@ -148,7 +154,7 @@ The same process repeats — select the minimum-cost node outside N', add it, an
 - Each iteration adds one node to N' and updates D(v) for that node's neighbors
 - The algorithm exits after the **5th iteration** when all nodes have been added to N'
 
-
+---
 
 ## Linkstate Routing Algorithm - Computational Complexity
 Dijkstra's algorithm has a worst-case complexity of O(n²), derived from the total number of node searches across all iterations.
@@ -164,6 +170,8 @@ At each iteration, the algorithm searches through all nodes not yet in N' to fin
 ### Result
 - Summing all searches across iterations gives the overall complexity.
 - Total computations grow with n(n+1)/2, which is **O(n²)**
+
+---
 
 ## RA: Distance Vector Routing
 An iterative, asynchronous, and distributed routing algorithm where each node maintains and exchanges distance vectors with neighbors to converge on least-cost paths across the network.
@@ -198,6 +206,8 @@ Each node keeps a local distance vector and periodically shares it with direct n
 - From time to time, each node sends its distance vector to its **neighbor nodes**
 - Neighbors receive the vector and use it to update their own distance vectors
 - This exchange repeats iteratively until the network **converges** (no further updates)
+
+---
 
 ## RA: Distance Vector Routing (Example)
 Now, let’s see an example of the distance vector routing algorithm. Let’s consider the three node network shown here:
@@ -235,9 +245,10 @@ Once no further updates are sent, the algorithm halts until a link cost change t
 - No new updates → nodes perform no further calculations
 - Nodes enter a **waiting mode** until a link cost change occurs
 
+---
+
 ## Link Cost Changes and Failures in DV - Count to Infinity Problem
 When link costs change, DV routing converges quickly for cost decreases but can suffer from the count-to-infinity problem when costs increase significantly.
-
 
 ### Scenario 1: Link Cost Decrease (y-x changes from 4 to 1)
 ![img_10.png](image/img_10.png)
@@ -275,6 +286,8 @@ The slow convergence in Scenario 2 arises because nodes rely on stale informatio
 - Nodes slowly **count up to infinity** before reaching the correct path cost
 - This is known as the **count-to-infinity problem**
 
+---
+
 ## Poison Reverse
 Poison reverse solves the count-to-infinity problem between two nodes by having a node advertise infinity back to the neighbor it uses to reach a destination, preventing routing loops.
 
@@ -303,6 +316,8 @@ When the link cost changes, poison reverse allows nodes to converge immediately 
 Poison reverse solves the two-node routing loop but does not generalize to all topologies.
 
 - Poison reverse **will not solve** the count-to-infinity problem when it involves 3 or more nodes that are not directly connected to each other
+
+---
 
 ## Distance Vector Routing Protocol Example: RIP
 - A distance vector-based routing protocol that uses hop count as its metric and exchanges routing advertisements periodically between neighbors to maintain least-cost paths to all subnets in an AS.
@@ -360,6 +375,8 @@ RIP operates at the application layer despite being a network routing protocol.
 - Reducing **convergence time**
 - Avoiding routing loops and the **count-to-infinity problem**
 
+---
+
 ## Linkstate Routing Protocol Example: OSPF
 A link-state routing protocol that uses Dijkstra's algorithm and LSA flooding to compute least-cost paths, with support for hierarchical routing within a single autonomous system.
 
@@ -411,6 +428,8 @@ OSPF uses a periodic refresh mechanism to keep link state information current.
     - First received copy is stored as **new**
     - Subsequent copies are treated as **duplicates**
 
+---
+
 ## Processing OSPF Messages in the Router
 ![img_17.png](image/img_17.png)
 
@@ -450,6 +469,7 @@ OSPF processing can be broken into time slices showing each stage from LSA recei
     - SPF is a CPU-intensive task and is scheduled to run over a period of time, typically only when LSAs have changed, to offset CPU costs
 - **T7** — SPF calculation completes and the **FIB is updated**
 
+---
 
 ## RA: Hot Potato Routing
 - A routing practice where a router forwards traffic to the closest egress point based on intradomain IGP path cost, getting traffic out of the network as quickly as possible.
@@ -480,6 +500,8 @@ A router in Dallas must forward traffic and can exit via New York or San Francis
 - **Simplifies computation** — routers already know IGP path costs, no additional calculation needed
 - **Path consistency** — the next router along the path will also choose the same egress point
 - **Reduces resource consumption** — traffic exits the network as soon as possible, freeing up internal network resources
+
+---
 
 ## Quiz
 - Q: In this lecture, we discuss intradomain routing, where all the nodes and subnets are owned and managed by the same organization. (In contrast, interdomain routing is about routing between different organizations – such as between two ISPs.) Before we begin talking about intradomain routing algorithms, what could the weights on the graph edges represent in these diagrams, when we are seeking the least-cost path between two nodes?

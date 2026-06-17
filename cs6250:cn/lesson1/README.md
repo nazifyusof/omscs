@@ -11,6 +11,8 @@
 * Learning bridges and forwarding tables
 * Spanning Tree Protocol and Layer 2 loop prevention
 
+---
+
 ## A Brief History of the Internet
 The Internet evolved over decades through key milestones in packet switching, open architecture, internetworking, and scalable naming that together shaped today's global network infrastructure.
 
@@ -94,6 +96,8 @@ The Internet's success stems from a set of interconnected foundational ideas.
 - Result: a system that connects many different devices, networks, and technologies under a common communication model
 - Explains why the **Internet protocol stack** scales successfully and why core protocols are difficult to replace
 
+---
+
 ## Internet Architecture Introduction
 Network protocol designers organize protocols into layers to manage complexity, where each layer provides a service to the layer above and uses the service of the layer below.
 
@@ -140,6 +144,8 @@ Strict layering is not always perfect in practice.
 - One layer may **duplicate functionality** that already appears in another layer (e.g., error recovery at multiple layers)
 - One layer may need **information from another layer**, making strict separation difficult
 - Despite these limitations, layering remains the main design idea that keeps the Internet manageable and able to evolve
+
+---
 
 ## The OSI Model
 The Internet uses a five-layer protocol stack that consolidates the seven-layer OSI reference model, with each layer providing a well-defined service to the layer above it.
@@ -192,6 +198,8 @@ For each layer of the Internet protocol stack, four questions frame the discussi
 - What are example **protocols or technologies** at that layer?
 - What do we call the **packet of information** handled at that layer?
 
+---
+
 ## Application, Presentation, and Session Layers
 - The OSI model separates the top three layers into application, presentation, and session, but the Internet protocol stack combines all three into a single broader application layer handled by applications or application-level protocols.
 
@@ -226,6 +234,8 @@ The session layer manages communication sessions between application processes a
 - Example: in a teleconference, the session layer concept explains how related **audio and video streams** are kept together as part of the same call
 - In the Internet protocol stack, session management is handled by **the application itself** or by protocols and libraries used by the application
 
+---
+
 ## Transport and Network Layers
 - The transport layer handles end-to-end communication between applications on different hosts, while the network layer moves packets across the Internet from one host to another.
 
@@ -258,6 +268,8 @@ The network layer is responsible for moving packets from one host to another acr
     - Defines the structure of the datagram and the addressing information used by hosts and routers
     - IP alone does not decide the full path in advance — **routing protocols** determine the routes datagrams can take
 - Packet of information at this layer is called a **datagram**
+
+---
 
 ## Data Link Layer and Physical Layer
 - The data link layer moves frames between directly connected nodes one hop at a time, while the physical layer transmits raw bits across the actual physical medium.
@@ -292,6 +304,8 @@ The physical layer is responsible for transferring raw bits across the physical 
     - Radio signals
 - Defines how bits are **represented and transmitted** over the medium
 - Example: Ethernet can run over copper wire or fiber optics — the data link layer remains Ethernet but the **physical-layer details differ** depending on the medium
+
+---
 
 ## Layers Encapsulation
 - As data moves down the protocol stack at the sender, each layer adds its own header to form a new packet unit; at the receiver, each layer strips its corresponding header in reverse — a process called de-encapsulation.
@@ -342,6 +356,8 @@ The decision of which layers each device implements reflects a deliberate archit
 - Keeps the **network core** simpler and focused on forwarding
 - Connects directly to the **end-to-end principle**
 
+---
+
 ## The End-to-end Principle
 - The end-to-end principle argues that the network core should remain simple and general, while application-specific functions should be implemented by the end systems at the edges of the network.
 
@@ -371,6 +387,7 @@ Pushing intelligence to the edge made the Internet easier to evolve and innovate
 - Lower layers could focus on shared network functions — moving packets across links and networks
 - This separation gave application designers **more flexibility** while keeping the underlying infrastructure **more general**
 
+---
 
 ## Violations of the End-to-End Principle and NAT Boxes
 - Real networks sometimes violate the end-to-end principle through intermediate devices like firewalls and NAT boxes that solve practical problems such as security enforcement and IPv4 address scarcity.
@@ -425,13 +442,10 @@ Because NAT complicates direct communication, several techniques have been devel
 - **UDP hole punching** — helps establish bidirectional UDP communication between hosts behind NATs
 - These workarounds help applications function but also demonstrate how NAT **adds complexity** to end-to-end communication
 
+---
+
 ## The Hourglass Shape of Internet Architecture
 - The Internet protocol stack takes an hourglass shape with many lower-layer technologies and upper-layer applications connected through a narrow waist of core protocols, particularly IP, TCP, and UDP.
-
-markdown## The Hourglass Architecture of the Internet
-- The Internet protocol stack takes an hourglass shape with many lower-layer technologies and upper-layer applications connected through a narrow waist of core protocols, particularly IP, TCP, and UDP.
-
-- ![img.png](image/img.png)
 
 ### The Hourglass Shape
 
@@ -488,13 +502,10 @@ The hourglass architecture is both a strength and a limitation of the Internet.
 - **Limitation** — the same core protocols become difficult to modify or replace
 - Future Internet architectures must consider not only technical performance but also **deployment, compatibility, coexistence, and smooth transition** from old protocols to new ones
 
+---
+
 ## Evolutionary Architecture Model
 - EvoArch models how layered protocol stacks evolve over time through dependencies, competition, and adoption, explaining why the Internet naturally develops an hourglass shape with a narrow, ossified waist.
-
-markdown## EvoArch: Evolutionary Architecture Model
-- EvoArch models how layered protocol stacks evolve over time through dependencies, competition, and adoption, explaining why the Internet naturally develops an hourglass shape with a narrow, ossified waist.
-
-- ![img.png](image/img.png)
 
 ### Modeling a Protocol Stack
 
@@ -577,6 +588,7 @@ EvoArch warns that even new architectures designed from scratch may re-develop t
 - Possible lesson: future architectures should avoid an **overly narrow waist**
 - A **wider waist** with several general but non-overlapping protocols may reduce competition among core protocols and make future evolution easier
 
+---
 
 ## Interconnecting Hosts and Networks
 - Different network devices operate at different layers of the protocol stack, from hubs that repeat raw bits at Layer 1 to switches that forward frames at Layer 2 to routers that move packets between networks at Layer 3.
@@ -610,7 +622,9 @@ Routers and Layer-3 switches operate at the network layer and use IP addresses t
 - Connect **separate networks**, not just hosts within the same local network
 - Example: a home host sending traffic to a web server — the router moves the packet from the local network toward the wider Internet
 - Routing protocols and router internals covered in detail in later modules
-- 
+
+---
+
 ## Learning Bridges
 - A learning bridge builds a forwarding table by observing source MAC addresses and incoming ports, allowing it to selectively forward frames to the correct port rather than flooding all ports.
 
@@ -651,13 +665,10 @@ Learning bridges improve local network efficiency over time.
 - As the bridge observes more traffic, its forwarding table becomes **more accurate**
 - Forwarding becomes mostly **selective** rather than flooded
 
+---
+
 ## Looping Problem in Bridges and the Spanning Tree Algorithm
 - The Spanning Tree Algorithm prevents Layer-2 forwarding loops by having bridges exchange configuration messages, elect a root bridge, and disable ports that would create cycles while preserving full physical connectivity.
-
-markdown## Spanning Tree Algorithm
-- The Spanning Tree Algorithm prevents Layer-2 forwarding loops by having bridges exchange configuration messages, elect a root bridge, and disable ports that would create cycles while preserving full physical connectivity.
-
-- ![img.png](image/img.png)
 
 ### Why Loops Are Problematic
 
@@ -744,6 +755,8 @@ The converged spanning tree has two properties.
 - All bridges remain **connected**
 - There are **no cycles**
 - Physical redundancy is preserved; only forwarding behavior is restricted to a loop-free subset of links
+
+---
 
 ## Quiz
 - Q: Some data link layer protocols, such 802.11 (WiFi), implement some basic error correction as the physical medium used is easily prone to interference and noise (such as a nearby running microwave). Is this a violation of the end-to-end principle?
