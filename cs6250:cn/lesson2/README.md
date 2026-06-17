@@ -1,11 +1,13 @@
 # Lesson 2: Transport and Application Layers
 
 ## Intro
-According to this model, the network layer makes the best effort to deliver data packets. Thus, it does not guarantee the delivery of packets, nor does it guarantee the integrity of the data. So, here is where the transport layer comes to offer some of these functionalities. The transport layer allows application programmers to develop applications assuming a standard set of functionalities provided by the transport layer. So the applications can run over diverse networks regardless of different network interfaces or possible unreliability of the network.
 
-Two most common transport protocols are:
-1. TCP 
-2. UDP
+The network layer makes a best-effort attempt to deliver packets — it does not guarantee delivery or data integrity. The **transport layer** fills this gap by providing a standard set of communication services that applications can rely on regardless of the underlying network.
+
+The two most common transport protocols are:
+
+1. **TCP** — reliable, connection-oriented
+2. **UDP** — lightweight, connectionless
 
 ---
 
@@ -24,30 +26,43 @@ Two most common transport protocols are:
 ---
 
 ## Segment
-- The sockets are identified based on special fields (shown below) in the segment such as the source port number field and the destination port number field.
+
+Sockets are identified by special fields in the segment header — specifically the **source port** and **destination port** number fields.
+
 ![img.png](image/img.png)
 
 ---
 
 ## Multiplexing
-- Ability for a host to run multiple applications to use the network simultaneously.
-  - E.g. Person using Facebook and Spotify at the same time on the same device. Network has only one IP address, but additional identifiers known as **port** numbers allow the network to deliver data to the correct application.
-- the sending host will need to gather data from different sockets and encapsulate each data chunk with header information (that will later be used in demultiplexing) to create segments, and then forward the segments to the network layer
-- Two types of multiplexing:
-  - Connectionless
-  - Connection-oriented
+
+Multiplexing is the ability for a host to run multiple applications using the network simultaneously.
+
+- A single device has one IP address, but **port numbers** identify which application each packet belongs to (e.g., Facebook and Spotify running at the same time)
+- The sending host gathers data from different sockets, encapsulates each chunk with header information, creates segments, and forwards them to the network layer
+
+**Two types of multiplexing:**
+- Connectionless (UDP)
+- Connection-oriented (TCP)
 
 ---
 
 ## De-multiplexing
-- The job of delivering the data included in the transport-layer segment to the appropriate socket, as defined in the segment fields,
+
+De-multiplexing is the process of delivering data from a transport-layer segment to the **correct socket**, as identified by the segment's port fields.
 
 ---
 
 ## Connectionless Multiplexing and De-multiplexing
-- The identifier of a UDP socket is a **two-tuple** that consists of a destination IP address and a destination port number.
-- Suppose that Host A sends data to Host B. The transport layer in Host A creates a transport-layer segment with the application data, the source port, and the destination port, and then Host A forwards the segment to the network layer. In turn, the network layer encapsulates the segment into a network-layer datagram and sends it to Host B with best-effort delivery
-- Let’s suppose that the datagram is successfully received by Host B. The transport layer at host B identifies the correct socket by looking at the field of the destination port. In the case host B runs multiple processes, each process will have its own UDP socket and, therefore, a distinct associated port number. Host B will use this information to demultiplex the receiving data to the correct socket. Suppose Host B receives UDP segments with a specific destination port number. In that case, it will forward the segments to the same destination process via the same destination socket, even if the segments come from different source hosts or source port numbers.
+
+A **UDP socket** is identified by a **two-tuple**: destination IP address + destination port number.
+
+### How It Works
+
+- Host A creates a segment with source port, destination port, and data, then forwards it to the network layer
+- The network layer encapsulates it into a datagram and delivers it with best-effort to Host B
+- Host B's transport layer identifies the correct socket by reading the **destination port** field
+- If Host B runs multiple processes, each has its own UDP socket with a distinct port number
+- Segments arriving at the same destination port are forwarded to the **same socket**, even if they come from different source hosts or ports
 
 ![img_1.png](image/img_1.png)
 
@@ -55,20 +70,32 @@ Two most common transport protocols are:
 ---
 
 ## Connection-oriented Multiplexing and De-multiplexing
-- The identifier for a TCP socket is a **four-tuple** that consists of the source IP, source port, destination IP, and destination port.
-- The TCP server has a listening socket that waits for connection requests coming from TCP clients. A TCP client creates a socket and sends a connection request, which is a TCP segment that has a source port number chosen by the client, a destination port number 12000, and a special connection-establishment bit set in the TCP header. Finally, the TCP server receives the connection request and creates a socket identified by the four-tuple source IP, source port, destination IP, and destination port. 
-- The server uses this socket identifier to demultiplex incoming data and forward them to this socket. Now, the TCP connection is established, and the client and server can send and receive data between one another.   
-![img_2.png](image/img_2.png)
-![img_3.png](image/img_3.png)
-- In this example, we have three hosts: A, B, and C. Host C initiates two HTTP sessions to server B, while Host A initiates one HTTP session to server B. 
-- Hosts C and A assign port numbers to their connections independently of one another. Host C assigns port numbers 26145 and 7532.
-- If Host A assigns the same port number as C, Host B can still demultiplex incoming data from the two connections because the connections are associated with different source IP addresses.
 
-### Extra Notes:
-- Let's assume we have a web server listening for connection requests on port 80. Clients send their initial connection requests and subsequent data with destination port 80. The web server can demultiplex incoming data based on their unique source IP addresses and source port numbers.
-- The client and the server may be using persistent HTTP sessions, in which case they exchange HTTP messages via the same server socket.
-- The client and the server may be using a non-persistent HTTP session, where for every request and response, a new TCP connection and a new socket are created and closed for every response/request. 
-  - A busy web server may experience severe performance impact.
+A **TCP socket** is identified by a **four-tuple**: source IP, source port, destination IP, destination port.
+
+### Connection Setup
+
+- The TCP server maintains a **listening socket** waiting for client connection requests
+- The client creates a socket and sends a segment with: its chosen source port, destination port 12000, and the connection-establishment bit set
+- The server receives the request and creates a new socket identified by the full four-tuple
+- The server uses this four-tuple to **demultiplex** all subsequent data to the correct socket
+
+![img_2.png](image/img_2.png)
+
+![img_3.png](image/img_3.png)
+
+### Multi-Client Example (Hosts A, B, C)
+
+- Host C initiates **two** HTTP sessions to server B; Host A initiates **one**
+- Hosts assign port numbers independently — Host C uses ports 26145 and 7532
+- If Host A happens to use the same port number as Host C, Host B can still demultiplex correctly because the **source IP addresses differ**
+
+### HTTP Session Notes
+
+- A web server on port 80 demultiplexes incoming data using unique source IP + source port combinations
+- **Persistent HTTP**: client and server reuse the same socket across multiple requests
+- **Non-persistent HTTP**: a new TCP connection and socket is created and torn down for every request/response pair
+  - Can cause significant performance overhead on a busy web server
 
 ---
 
@@ -95,46 +122,62 @@ Two most common transport protocols are:
 ---
 
 ## The TCP Three-Way Handshake
-- Connection Establishment
-1. Step 1: The TCP client sends a special segment (containing no data) with the SYN bit set to 1. The client also generates an initial sequence number (client_isn) and includes it in this special TCP SYN segment.
-2. Step 2: The server, upon receiving this packet, allocates the required resources for the connection and sends back the special "connection-granted" segment which we call SYNACK segment. This packet has the SYN bit set to 1, the acknowledgement field of the TCP segment header set to client_isn+1, and a randomly chosen initial sequence number (server_isn) for the server.
-3. Step 3: When the client receives the SYNACK segment, it also allocates buffer and resources for the connection and sends an acknowledgment with SYN bit set to 0.
+
+### Connection Establishment
+
+1. **SYN** — The client sends a special segment (no data) with the SYN bit set to 1 and an initial sequence number (`client_isn`)
+2. **SYNACK** — The server allocates resources and replies with SYN=1, `ack = client_isn+1`, and its own initial sequence number (`server_isn`)
+3. **ACK** — The client allocates buffers/resources and sends an acknowledgment with SYN=0; the connection is now established
+
 ![img_6.png](image/img_6.png)
 
+### Connection Teardown
 
-- Connection Teardown
-1. Step 1: When the client wants to end the connection, it sends a segment with FIN bit set to 1 to the server. 
-2. Step 2: The server acknowledges that it has received the connection closing request and is now working on closing the connection. 
-3. Step 3: The server then sends a segment with FIN bit set to 1, indicating that connection is closed. 
-4. Step 4: The client sends an ACK for it to the server. It also waits for sometime to resend this acknowledgment in case the first ACK segment is lost.
+1. **FIN** — The client sends a segment with FIN=1 to signal it wants to close the connection
+2. **ACK** — The server acknowledges the close request and begins closing
+3. **FIN** — The server sends its own FIN=1 segment
+4. **ACK** — The client sends a final ACK and waits briefly to resend it if the first is lost
+
 ![img_7.png](image/img_7.png)
 
 
 ---
 
 ## Reliable Transmission
-- Network layer is unreliable, and this may lead to packets being lost or arriving out of order. This can be an issue for a lot of applications. For example, a file downloaded over the Internet might become corrupted if some packets become lost during the transfer.
-- **TCP guarantees in-order delivery** of the application-layer data without any loss or corruption
 
-### How?
-- the sender should be able to know which segments were received by the remote host and which were lost by
-  - Automatic Repeat Request or ARQ: having the receiver send acknowledgments indicating that it has successfully received the specific segment. If the sender does not receive an acknowledgment within a given period of time, the sender can assume the packet is lost and resend it
-  - Stop and Wait ARQ: The simplest way would be for the sender to send a packet and wait for its acknowledgment from the receiver.
-    - Note that the algorithm typically needs to figure out the waiting time after which it resends the packet, and this estimation can be tricky. A small timeout value can lead to unnecessary retransmissions, but a large timeout value can lead to unnecessary delays. Typically the timeout value is a function of the estimated **round trip time (RTT)** of the connection.
-- This type of alternate sending and waiting for acknowledgment has a significantly low performance. To solve this problem, the sender can send multiple packets without waiting for acknowledgments. More specifically, the sender may send at most N unacknowledged packets typically referred to as the **window size**. As the sender receives an acknowledgment from the receiver, it can send more packets based on the window size. In implementing this, we need to take care of the following concerns:
-  - The receiver needs to identify and notify the sender of a missing packet. Thus, each packet is tagged with a unique byte sequence number which is increased for subsequent packets in the flow based on the size of the packet.
-  -  Also, both sender and receiver would need to buffer more than one packet. For instance, the sender would need to buffer packets that have been transmitted but not acknowledged. Similarly, the receiver may need to buffer packets because the rate of consuming these packets (e.g., writing to a disk) is slower than the rate at which the packets arrive.
+The network layer is unreliable — packets can be lost or arrive out of order. **TCP guarantees in-order, loss-free delivery** of application data.
 
-### Receiver Notifies Sender of Missing Packets
-1. One way is for the receiver to send an ACK for the most recently received in-order packet. The sender would then send all packets from the most recently received in-order packet, even if some of them had been sent before. The receiver can simply discard any out-of-order received packets. This is called Go-back-N. In the figure below, packet 7 is lost in the network so the receiver will discard any subsequent packets. The sender will send all the packets starting from 7 again. 
+### ARQ: Automatic Repeat Request
 
-Clearly, in the above case, a single packet error can cause a lot of unnecessary retransmissions
+The core mechanism: the receiver sends **acknowledgments (ACKs)**. If the sender doesn't receive an ACK within a timeout period, it assumes the packet was lost and retransmits.
+
+- **Stop-and-Wait ARQ** — send one packet, wait for its ACK before sending the next
+  - Simple but very low throughput
+  - Timeout must be carefully tuned: too short → unnecessary retransmissions; too long → unnecessary delays
+  - Timeout is typically based on the estimated **Round Trip Time (RTT)**
+
+### Windowed Transmission
+
+To improve performance, the sender can transmit up to **N unacknowledged packets** at once — this is called the **window size**.
+
+- Each packet is tagged with a **byte sequence number** so the receiver can detect gaps
+- Both sender and receiver must **buffer packets**:
+  - Sender buffers transmitted-but-unacknowledged packets
+  - Receiver buffers out-of-order packets until missing ones arrive
+
+### Handling Missing Packets
+
+**1. Go-Back-N** — The receiver ACKs the most recently received in-order packet and discards all out-of-order packets. The sender retransmits everything from the last unacknowledged packet onward.
+
+- A single lost packet can trigger many unnecessary retransmissions
 
 ![img_8.png](image/img_8.png)
 
-2. TCP uses **selective ACKing**.  The sender retransmits only those packets that it suspects were received in error. Then, the receiver would acknowledge a correctly received packet even if it is not in order. The out-of-order packets are buffered until any missing packets have been received, at which point the batch of the packets can be delivered to the application layer. Note that, even in this case, TCP would need to use a timeout as there is a possibility of ACKs getting lost in the network.
+**2. Selective ACKing (TCP's approach)** — The receiver ACKs correctly received packets even if out of order. Out-of-order packets are buffered, and only the missing packets are retransmitted.
 
-In addition to using a timeout to detect loss of packets, TCP also uses duplicate acknowledgments as a means to detect packet loss. A duplicate ACK is an additional acknowledgment of a segment for which the sender has already received acknowledgment earlier. When the sender receives 3 duplicate ACKs for a packet, it considers the packet to be lost and will retransmit it instead of waiting for the timeout. This is known as **fast retransmit**. For example, in the figure below, once the sender receives 3 duplicate ACKs, it will retransmit packet 7 without waiting for a timeout.
+### Fast Retransmit
+
+TCP doesn't always wait for a timeout to detect loss. A **duplicate ACK** is re-sent by the receiver for each out-of-order packet received. When the sender receives **3 duplicate ACKs**, it immediately retransmits the missing packet — this is **fast retransmit**.
 
 ![img_9.png](image/img_9.png)
 
@@ -142,9 +185,11 @@ In addition to using a timeout to detect loss of packets, TCP also uses duplicat
 ---
 
 ## Transmission Control
-- Why control the transmission rate?
-- Where should the transmission control function reside in the network stack?  
-  - Turns out that transmission control is a fundamental function for most applications. Therefore implementing it in the transport layer is easier.
+
+Transmission control limits the rate at which data is sent, preventing both the receiver and the network from being overwhelmed.
+
+- **Why?** — Sending too fast causes packet loss, buffer overflow, and congestion
+- **Where?** — At the transport layer, since transmission control is fundamental to most applications and is easier to implement end-to-end than inside the network
 
 ---
 
@@ -177,70 +222,71 @@ In addition to using a timeout to detect loss of packets, TCP also uses duplicat
 ---
 
 ## Congestion Control Introduction
-- Congestion control: Controlling the transmission rate to  protect the network from congestion
+
+Congestion control limits the transmission rate to **protect the network** from overload.
 
 ### Goals
-  - Efficiency. We should get high throughput, or utilization of the network should be high.
-  - Fairness. Each user should have their fair share of the network bandwidth. The notion of fairness is dependent on the network policy. For this context, we will assume that every flow under the same bottleneck link should get equal bandwidth.
-  - Low delay. In theory, it is possible to design protocols with consistently high throughput assuming infinite buffer. Essentially, we could keep sending the packets to the network, and they will get stored in the buffer and eventually get delivered. However, it will lead to long queues in the network leading to delays. Thus, applications sensitive to network delays such as video conferencing will suffer. Therefore, we want the network delays to be minor.
-  - Fast convergence. The idea here is that a flow should converge to its fair allocation fast. Fast convergence is crucial since a typical network’s workload is composed of many short flows and few long flows. If the convergence to fair share is not fast enough, the network will still be unfair for these short flows.
+
+- **Efficiency** — maximize network throughput and utilization
+- **Fairness** — every flow sharing a bottleneck link should get an equal share of bandwidth
+- **Low delay** — avoid filling buffers and creating long queues (critical for latency-sensitive apps like video conferencing)
+- **Fast convergence** — flows should quickly reach their fair share (important because most network traffic consists of many short flows)
 
 ### Approaches
-- There are **two approaches**
-  - network-assisted congestion control
-    - we rely on the network layer to provide explicit feedback to the sender about congestion in the network
-    - For instance, routers could use an ICMP source quench to notify the source that the network is congested. However, even the ICMP packets could be lost under severe congestion, rendering the network feedback ineffective.
-  - end-to-end congestion control
-    - the network here does not provide any explicit feedback about congestion to the end hosts. Instead, the hosts infer congestion from the network behavior and adapt the transmission rate.
-- Eventually, TCP ended up using the end-to-end approach because it largely aigns with the end-to-end principle of the Internet architecture
-- Congestion control is a primitive provided in the transport layer, whereas routers operate at the network layer. Therefore, the feature resides in the end nodes with no support from the network. Note that this is no longer true as certain routers in the modern networks can provide explicit feedback to the end-host by using protocols such as ECNLinks to an external site. and QCNLinks to an external site..
+
+| Approach | Description |
+|---|---|
+| **Network-assisted** | Routers explicitly signal congestion (e.g., via ICMP). Unreliable under severe congestion since ICMP packets can be dropped. |
+| **End-to-end** | Hosts infer congestion from network behavior (e.g., packet loss, RTT). **TCP uses this approach**, consistent with the end-to-end principle. |
+
+> Modern networks can provide explicit feedback via **ECN** and **QCN**, but classic TCP relies purely on end-to-end inference.
 
 ### Signs of Congestion
-- Two main signals
-  - packet delay
-    - the queues in the router buffers build-up, leading to increased packet delays
-    - Thus, an increase in the round trip time, which can be estimated based on ACKs, can indicate congestion in the network.
-    - However, it turns out that packet delays in a network tend to be variable, making delay-based congestion inference quite tricky
-  - packet loss
-    - As the network gets congested, routers start dropping packets.
-    - Note that packets can also be lost due to other reasons such as routing errors, hardware failure, time-to-live (TTL) expiry, error in the links, or flow control problems, although it is rare.
-- The earliest implementation of TCP used packet loss as a signal for congestion. This is mainly because TCP already detected and handled packet losses to provide reliability.
 
-### How TCP Sender Limit The Sending Rate?
-- TCP congestion control is to
-  - determine the network's available capacity
-  - choose how many packets to send without adding to the network's congestion level.
-- TCP uses a congestion window similar to the receive window used for flow control. It represents the maximum number of unacknowledged data that a sending host can have in transit (sent but not yet acknowledged).
-- TCP uses a **probe-and-adapt** approach in adapting the congestion window. Under normal conditions, TCP increases the congestion window trying to achieve the available throughput. Once it detects congestion, the congestion window is decreased.
-- In the end, the number of unacknowledged data that a sender can have is the minimum between the congestion window and the receive window.
-  - `LastByteSent – LastByteAcked <= min{cwnd, rwnd}`
-- In a nutshell, a TCP sender cannot send faster than the slowest component, which is either the network or the receiving host.
+- **Packet delay** — growing router queues increase RTT; however, delay is variable and hard to use reliably
+- **Packet loss** — routers drop packets when buffers overflow; TCP already handles loss for reliability, so it naturally uses this as a congestion signal
 
-### Congestion Control at TCP - AIMD
-- additive increase/multiplicative decrease (AIMD): It decreases the window when the level of congestion goes up, and it increases the window when the level of congestion goes down
-- AIMD approach reduces the congestion window at a much faster rate than it increases the congestion window
-- The main reason for this approach is that the consequences of having too large a window are much worse than those of it being too small.
-- For example, when the window is too large, more packets will be dropped and retransmitted, making network congestion even worse; thus, it is crucial to reduce the number of packets being sent into the network as quickly as possible.
-- Additive Increase
-  - The connection starts with a constant initial window, typically 2, and increases it additively.
-  -  The idea behind additive increase is to increase the window by one packet every RTT (Round Trip Time). So, in the additive increase part of the AIMD, every time the sending host successfully sends a CongestionWindow (`cwnd`) number of packets it adds 1 to `cwnd`
-  - Also, in practice, this increase in AIMD happens incrementally. TCP does not wait for ACKs of all the packets from the previous RTT. Instead, it increases the congestion window size as soon as each ACK arrives. In bytes, this increment is a portion of the MSS (Maximum Segment Size).
+### How TCP Limits the Sending Rate
+
+TCP uses a **congestion window (`cwnd`)** — the maximum number of unacknowledged bytes the sender may have in transit.
+
+```
+LastByteSent – LastByteAcked <= min{cwnd, rwnd}
+```
+
+The sender cannot exceed either the network's capacity (`cwnd`) or the receiver's capacity (`rwnd`) — whichever is smaller.
+
+TCP uses a **probe-and-adapt** strategy: increase `cwnd` when the network is clear, decrease it when congestion is detected.
+
+### AIMD: Additive Increase / Multiplicative Decrease
+
+AIMD is TCP's core congestion control algorithm — it grows the window slowly but shrinks it fast.
+
+**Additive Increase:**
+- Start with a small initial window (typically 2 packets)
+- Add 1 packet worth of `cwnd` per RTT when no loss is detected
+- In practice, `cwnd` is increased incrementally as each ACK arrives:
   - `Increment = MSS × (MSS / CongestionWindow)`
   - `CongestionWindow += Increment`
-  - ![img_11.png](image/img_11.png)
-- Multiplicative Decrease
-  - Once TCP detects congestion, it reduces the rate at which the sender transmits.
-  - When the TCP sender detects that a loss event has occurred, then it sets `cwnd` to half of its previous value.
-  - For example, suppose the `cwnd` is currently set to 16 packets. If a loss is detected, then cwnd is set to 8. 
-  - Further losses would result in the `cwnd` to be reduced to 4, and then to 2, and then to 1
-  - ![img_12.png](image/img_12.png)
-- TCP Reno
-  - Different implementations of TCP use variations to control congestion and maximize bandwidth usage
-  - E.g. TCP Reno uses two types of loss events as a signal of congestion
-    - The first is the triple duplicate ACKs, which is considered mild congestion.  In this case, the congestion window is reduced to half the original.
-    - The second kind of congestion detection is timeout, i.e., when no ACK is received within a specified amount of time. It is considered a more severe form of congestion, and the congestion window is reset to the initial window size.
-  - ![img_13.png](image/img_13.png)
-  - Lastly, we note that "probing" refers to the fact that a TCP sender increases its transmission rate to probe for the rate at which congestion begins, then backs off from that rate, and then begins probing again to see if the congestion level has changed.
+
+![img_11.png](image/img_11.png)
+
+**Multiplicative Decrease:**
+- On detecting a loss event, halve `cwnd`
+- Example: `cwnd` = 16 → loss detected → `cwnd` = 8 → further loss → 4 → 2 → 1
+
+![img_12.png](image/img_12.png)
+
+**TCP Reno — two levels of congestion response:**
+
+| Signal | Severity | Response |
+|---|---|---|
+| 3 duplicate ACKs | Mild | Halve `cwnd` |
+| Timeout (no ACK) | Severe | Reset `cwnd` to initial window size |
+
+![img_13.png](image/img_13.png)
+
+> **Probing:** TCP continually increases its rate to find the congestion point, backs off, then probes again — this is the "probe-and-adapt" cycle.
 
 ---
 
@@ -265,70 +311,113 @@ In addition to using a timeout to detect loss of packets, TCP also uses duplicat
 ---
 
 ## TCP Fairness
-- fairness means that for k connections passing through one common link with capacity R bps, each connection gets an average throughput of R/k.
-- Consider a simple scenario where two TCP connections share a single link with bandwidth R. For simplicity, assume that both connections have the same RTT and only TCP segments pass through the link. Suppose we plot a graph for the throughput of these two connections. In that case, the throughput for each should sum up to R. The goal is to get the throughput achieved for each link to fall somewhere near the intersection of the equal bandwidth share line and the full bandwidth utilization line, as shown in the graph below:
+
+Fairness means that for **k connections** sharing a link of capacity R bps, each connection receives an average throughput of **R/k**.
+
+### AIMD Convergence to Fairness
+
+Consider two TCP connections sharing a single link with bandwidth R (same RTT, TCP-only traffic):
+
 ![img_16.png](image/img_16.png)
-- At point A in the above graph, the total utilized bandwidth is less than capacity R, so no loss can occur at this point. Therefore, both the connection will increase their window size. Thus, the utilized bandwidth's sum will grow, and the graph will move towards B.
-- At point B, as the total transmission rate is more than capacity R, both connections may start having packet loss. As a result, they will decrease their window size to half and move towards point C.
-- At point C, the total throughput is again less than R, so both connections will increase their window size to move towards point D and will experience packet loss at D, and so on.
-- Thus, **using AIMD leads to fairness in bandwidth sharing**.
+
+- **Point A** — total bandwidth < R, no loss → both connections increase `cwnd`, moving toward B
+- **Point B** — total bandwidth > R, packet loss → both halve `cwnd`, moving toward C
+- **Point C** — total bandwidth < R again → both grow, moving toward D
+- This oscillation **converges toward the equal-share line**
+
+**AIMD naturally leads to fair bandwidth sharing.**
 
 ---
 
 ## Caution About Fairness
-- There can be cases when TCP is not fair.
-- Cases:
-  - One such case arises due to the difference in the RTT of different TCP connections.
-    - Recall that TCP Reno uses ACK-based adaptation of the congestion window. Thus, connections with smaller RTT values would increase their congestion window faster than those with longer RTT values. This leads to an unequal sharing of the bandwidth.
-  - if a single application uses multiple parallel TCP connections.
-    - nine applications using one TCP connection sharing a link of rate R. If a new application establishes a connection on the same link and also uses one TCP connection, then each application gets assigned the same transmission rate of R / 10. But, if the new application had 11 parallel TCP connections, it would get an unfair allocation of more than R / 2.
+
+TCP fairness does **not** always hold in practice.
+
+### Case 1: Different RTTs
+
+TCP Reno adapts `cwnd` based on ACKs. Connections with **shorter RTTs** receive ACKs faster and grow their window more quickly — leading to an unequal share of bandwidth.
+
+### Case 2: Multiple Parallel Connections
+
+A single application can open multiple TCP connections to claim a larger share:
+
+- 9 applications, 1 connection each, on a link of rate R → each gets **R/10**
+- A 10th application opens **11 connections** → it gets more than **R/2**, starving others
 
 ---
 
-## Congestion Control in Modern Network Environments: TCP CUBIC
-- We can see that TCP Reno has low network utilization, especially when the network bandwidth is high or the delay is large. Such networks are also known as high bandwidth delay product networks.
-- To make TCP more efficient under such networks, many improvements to TCP congestion control have been proposed. Now we will look at one such version, called `TCP CUBIC`, which was also implemented in the Linux kernel. It uses a CUBIC polynomial as the growth function.
+## Congestion Control in Modern Networks: TCP CUBIC
+
+TCP Reno has poor utilization on **high bandwidth-delay product (BDP)** networks (high bandwidth + high latency). TCP CUBIC, used in the Linux kernel, addresses this with a cubic polynomial growth function.
+
 ![img_17.png](image/img_17.png)
-- Steps
-  - Let us see what happens when TCP experiences a triple duplicate ACK, say at window=Wmax. This could be because of congestion in the network. To maintain TCP-fairness, it uses a multiplicative decrease and reduces the window to half. Let us call this Wmin.
-  - Now, we know that the optimal window size would be in between Wmin and Wmax  and closer to Wmax.
-  - So, instead of increasing the window size by 1, it is okay to increase the window size aggressively in the beginning.
-  - Once the W approaches closer to Wmax, it is wise to increase it slowly because that is where we detected a packet loss last time. Assuming no loss is detected this time around Wmax, we keep on increasing the window a little bit
-  - If there is no loss still, it could be that the previous loss was due to a transient congestion or non-congestion related event. Therefore, it is okay to increase the window size with higher values now.
-- This window growth idea is approximated in TCP CUBIC using a cubic function. Here is the exact function it uses for the window growth:
-  - `W(t) = C * (t - K)^3 + Wmax`
-  - C = scaling constant
-  - t = time since the last congestion event (packet loss)
-  - K = time period that the above function takes to increase W to Wmax when there is no further loss
-  - K = cube root of (Wmax * beta / C)
-  - beta = multiplicative decrease factor after loss
-- It is important to note that time here is the time elapsed since the last loss event instead of the usual ACK-based timer used in TCP Reno. This also makes TCP CUBIC RTT-fair.
+
+### How TCP CUBIC Works
+
+1. TCP detects congestion at window = **Wmax** (triple duplicate ACK)
+2. Multiplicatively decrease to **Wmin = Wmax / 2** for fairness
+3. The optimal window is somewhere between Wmin and Wmax — so CUBIC grows **aggressively at first**
+4. As the window approaches Wmax, growth **slows down** (this is where loss was last seen)
+5. If no loss occurs around Wmax, growth **speeds up again** — the previous loss may have been transient
+
+### CUBIC Growth Function
+
+```
+W(t) = C × (t - K)³ + Wmax
+```
+
+| Variable | Meaning |
+|---|---|
+| `t` | Time elapsed since the last congestion event |
+| `K` | Time for W to grow back to Wmax from Wmin (= ∛(Wmax × β / C)) |
+| `C` | Scaling constant |
+| `β` | Multiplicative decrease factor |
+
+> Unlike TCP Reno (ACK-based timer), CUBIC uses **elapsed time** since the last loss event — making it **RTT-fair** across connections with different round-trip times.
 
 ---
 
-## The TCP Protocol: TCP Throughput
-- Given this behavior, we want to have a simple model that predicts the throughput for a TCP connection.
-- To make our model more realistic, let's also assume that we have p = the probability loss. So, we assume that the network delivers 1/p consecutive packets, followed by a single packet loss.
+## TCP Throughput Model
+
+Given TCP's AIMD behavior, we can build a simple model to predict throughput.
+
+- Let **p** = probability of packet loss
+- Assume the network delivers **1/p consecutive packets** followed by one loss
+
 ![img_18.png](image/img_18.png)
+
 ![img_19.png](image/img_19.png)
 
 
 ---
 
 ## Optional Reading: Datacenter TCP
-- At this point, it is essential to know that a lot of research has been going into optimizing the congestion control mechanisms. These optimizations are called for because of the evolution of the networks. We looked at TCP CUBIC as one such example for high bandwidth-delay product networks.
-- Similarly, data center (DC) networks are other networks where new TCP congestion control algorithms have been proposed and implemented. There are mainly two differences that have led to this:
-  - The flow characteristics of DC networks are different from the public Internet. 
-    - For example, there are many short flows that are sensitive to delay. Thus, the congestion control mechanisms are optimized for delay and throughput, not just the latter alone.
-  - A private entity often owns DC networks. 
-    - This makes changing the transport layer easier since the new algorithms do not need to coexist with the older ones.
-- DCTCP and TIMELY are two popular examples of TCP designed for DC environments. DCTCP is based on a hybrid approach of using both implicit feedback, e.g., packet loss, and explicit feedback from the network using ECN for congestion control. TIMELY uses the gradient of RTT to adjust its window.
+
+Data center (DC) networks have unique characteristics that motivate **specialized TCP congestion control algorithms**.
+
+### Why DC Networks Are Different
+
+- **Flow characteristics** — many short, latency-sensitive flows; congestion control must optimize for both delay and throughput
+- **Private ownership** — DC networks are owned by a single entity, making it easier to deploy new transport algorithms without needing to coexist with older ones
+
+### Notable DC TCP Algorithms
+
+- **DCTCP** — hybrid approach using both implicit feedback (packet loss) and explicit feedback from the network via **ECN** (Explicit Congestion Notification)
+- **TIMELY** — uses the **gradient of RTT** to detect and respond to congestion before packet loss occurs
 
 ---
 
-## Key words
-- **Segment**: The transport layer on the sending host receives a message from the application layer and appends its own header to create a segment
-- **De-multiplexing**: The process of delivering the data to the correct application on the receiving host. The transport layer on the receiving host uses the port number in the segment header to determine which application to deliver the data to.
+## Key Terms
+
+| Term | Definition |
+|---|---|
+| **Segment** | A transport-layer packet — the application message plus a transport header added by TCP/UDP |
+| **De-multiplexing** | Delivering data from a segment to the correct application socket based on port numbers in the header |
+| **cwnd** | Congestion window — limits how many unacknowledged bytes the sender may have in flight |
+| **rwnd** | Receive window — the receiver's available buffer space, advertised back to the sender |
+| **ssthresh** | Slow start threshold — the point at which TCP switches from exponential to linear window growth |
+| **RTT** | Round Trip Time — estimated from ACK timing; used to set retransmit timeouts |
+| **MSS** | Maximum Segment Size — the largest TCP payload allowed on a connection |
 
 
 ---
