@@ -1,4 +1,4 @@
-# Lesson x
+# Lesson 6
 
 ## Intro
 
