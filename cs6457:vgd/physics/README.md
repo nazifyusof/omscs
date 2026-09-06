@@ -2,8 +2,6 @@
 
 * Overview of what a physics engine is, common games that pioneered real-time physics, and the core building blocks (bodies, forces, connectors, collision detection) used across engines like Havok, ODE, and PhysX.
 
-![img.png](img.png)
-
 ## What Is a Physics Engine
 
 A physics engine provides simulation calculations for a virtual environment.
